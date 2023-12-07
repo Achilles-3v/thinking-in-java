@@ -1,4 +1,4 @@
-package chapter02.task10.allthecolors;
+package chapter02.task11.allthecolors;
 
 public class AllTheColors {
 

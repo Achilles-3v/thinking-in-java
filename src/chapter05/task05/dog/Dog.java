@@ -29,13 +29,17 @@ public class Dog {
         System.out.println(name + " says " + word);
     }
 
-    public void bark(int age) {
+    public void bark(int age, double weight) {
         this.age = age;
+        this.weight = weight;
         System.out.println(name + " is " + this.age + " years old");
+        System.out.printf("%s weight %.2f kg\n", name, this.weight);
     }
 
-    public void bark(double weight) {
+    public void bark(double weight, int age) {
         this.weight = weight;
+        this.age = age;
         System.out.printf("%s weight %.2f kg\n", name, this.weight);
+        System.out.println(name + " is " + this.age + " years old");
     }
 }

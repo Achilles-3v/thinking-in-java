@@ -20,5 +20,14 @@ public class ArrayString {
             System.out.print(as + " ");
         }
 
+        ArrayString[] array2 = new ArrayString[] {
+                new ArrayString("123"),
+                new ArrayString("234"),
+                new ArrayString("345")
+        };
+
+        for (ArrayString a : array2) {
+            System.out.println(a.word);
+        }
     }
 }

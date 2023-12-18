@@ -40,7 +40,30 @@ public class Detergent extends Cleanser{
         x.scrub();
         x.foam();
         System.out.println(x);
-        System.out.print("base classes: ");
+        System.out.print("base class: ");
         Cleanser.main(args);
+    }
+}
+
+class MyTest extends Detergent {
+
+    @Override
+    public void scrub() {
+        append(" MyTest.scrub()");
+        super.scrub();
+    }
+
+    public void sterilize() { append(" sterilize()"); }
+
+    public static void main(String[] args) {
+        MyTest mt = new MyTest();
+        mt.dilute();
+        mt.apply();
+        mt.scrub();
+        mt.foam();
+        mt.sterilize();
+        System.out.println(mt);
+        System.out.print("base class: ");
+        Detergent.main(args);
     }
 }

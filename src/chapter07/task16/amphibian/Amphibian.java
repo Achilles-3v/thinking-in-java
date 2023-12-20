@@ -22,5 +22,10 @@ public class Amphibian {
     public void swim() {
         System.out.println(name + " swims");
     }
-    public void regeneration() {}
+    public void regeneration() {
+        System.out.println("regeneration Amphibian");
+    }
+    static void say(Amphibian amphibian) {
+        amphibian.swim();
+    }
 }

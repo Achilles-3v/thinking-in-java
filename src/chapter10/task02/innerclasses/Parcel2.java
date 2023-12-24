@@ -1,7 +1,5 @@
 package chapter10.task02.innerclasses;
 
-import chapter10.task01.innerclasses.Parcel1;
-
 /**
  * Возврат ссылки на внутренний класс
  * @version 1.2 2023-12-25

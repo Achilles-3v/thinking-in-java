@@ -56,5 +56,26 @@ public class GreenhouseControls extends Controller {
         public String toString() { return "Полив выключен"; }
     }
 
+    private String thermostat = "День";
+    public class ThermostatNight extends Event {
+        public ThermostatNight(long delayTime) { super(delayTime); }
+
+        @Override
+        public void action() {
+            thermostat = "Ночь";
+        }
+        public String toString() { return "Термостат использует ночьной режим"; }
+    }
+
+    public class ThermostatDay extends Event {
+        public ThermostatDay(long delayTime) { super(delayTime);}
+
+        @Override
+        public void action() {
+            thermostat = "День";
+        }
+        public String toString() { return "Термостат использует дневной режим"; }
+    }
+
 
 }

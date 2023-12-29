@@ -24,4 +24,17 @@ public class GreenhouseControls extends Controller {
         }
         public String toString() { return "Свет включен"; }
     }
+
+    public class LightOff extends Event {
+        public LightOff(long delayTime) { super(delayTime); }
+
+        @Override
+        public void action() {
+            light = false;
+        }
+        public String toString() { return "Свет выключен"; }
+    }
+
+    private boolean water = false;
+
 }

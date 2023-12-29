@@ -77,5 +77,39 @@ public class GreenhouseControls extends Controller {
         public String toString() { return "Термостат использует дневной режим"; }
     }
 
+    // Пример метода action(), вставляющего новый экземпляр
+    // самого себя в список событий
+    public class Bell extends Event {
+        public Bell(long delayTime) { super(delayTime); }
+
+        @Override
+        public void action() {
+            addEvent(new Bell(delayTime));
+        }
+        public String toString() { return "Бам"; }
+    }
+
+    public class Restart extends Event {
+        private Event[] eventList;
+        public Restart(long delayTime, Event[] eventList) {
+            super(delayTime);
+            this.eventList = eventList;
+            for (Event e : eventList)
+                addEvent(e);
+        }
+
+        @Override
+        public void action() {
+            for (Event e : eventList) {
+                e.start(); // Перезапуск каждого события
+                addEvent(e);
+            }
+            start(); // Перезапуск текущего события
+            addEvent(this);
+        }
+
+        public String toString() { return "Перезапуск системы"; }
+    }
+
 
 }

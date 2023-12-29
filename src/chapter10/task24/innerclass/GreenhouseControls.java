@@ -36,5 +36,25 @@ public class GreenhouseControls extends Controller {
     }
 
     private boolean water = false;
+    public class WaterOn extends Event {
+        public WaterOn(long delayTime) { super(delayTime); }
+
+        @Override
+        public void action() {
+            water = true;
+        }
+        public String toString() { return "Полив включен"; }
+    }
+
+    public class WaterOff extends Event {
+        public WaterOff(long delayTime) { super(delayTime);}
+
+        @Override
+        public void action() {
+            water = false;
+        }
+        public String toString() { return "Полив выключен"; }
+    }
+
 
 }

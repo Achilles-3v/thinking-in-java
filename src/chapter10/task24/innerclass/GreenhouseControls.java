@@ -111,5 +111,14 @@ public class GreenhouseControls extends Controller {
         public String toString() { return "Перезапуск системы"; }
     }
 
+    public static class Terminate extends Event {
+        public Terminate(long delayTime) { super(delayTime); }
 
+        @Override
+        public void action() {
+            System.exit(0);
+        }
+
+        public String toString() { return "Отключение"; }
+    }
 }

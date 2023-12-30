@@ -28,6 +28,20 @@ public class LocalInnerClass {
         return new LocalCounter();
     }
 
+    // То же с анонимным внутренним классом
+    Counter getCounter2(final String name) {
+        return new Counter() {
+            {
+                System.out.println("Counter()");
+            }
+            @Override
+            public int next() {
+                System.out.println(name);
+                return count++;
+            }
+        };
+    }
+
     public static void main(String[] args) {
 
     }

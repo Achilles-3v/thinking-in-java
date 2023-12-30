@@ -21,7 +21,7 @@ public class LocalInnerClass {
 
             @Override
             public int next() {
-                System.out.println(name);
+                System.out.print(name);
                 return count++;
             }
         }
@@ -36,13 +36,20 @@ public class LocalInnerClass {
             }
             @Override
             public int next() {
-                System.out.println(name);
+                System.out.print(name);
                 return count++;
             }
         };
     }
 
     public static void main(String[] args) {
-
+        LocalInnerClass lic = new LocalInnerClass();
+        Counter
+                c1 = lic.getCounter("Локальный"),
+                c2 = lic.getCounter2("Анонимный");
+        for (int i = 0; i < 5; i++)
+            System.out.println(c1.next());
+        for (int i = 0; i < 5; i++)
+            System.out.println(c2.next());
     }
 }

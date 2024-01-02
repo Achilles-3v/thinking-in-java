@@ -69,4 +69,16 @@ public class TextFile extends ArrayList<String> {
             throw new RuntimeException(e);
         }
     }
+    // Simple test:
+    public static void main(String[] args) {
+        String file = read("TextFile.java");
+        write("net/achilles/util/test.txt", file);
+        TextFile text = new TextFile("net/achilles/util/test.txt");
+        text.write("test2.txt");
+        // Break into unique sorted list of words:
+        TreeSet<String> words = new TreeSet<String>(
+                new TextFile("TextFile.java", "\\W+"));
+        // Display the capitalized words:
+        System.out.println(words.headSet("a"));
+    }
 }

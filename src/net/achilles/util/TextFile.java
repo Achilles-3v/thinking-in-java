@@ -51,5 +51,22 @@ public class TextFile extends ArrayList<String> {
         // String at the first position:
         if(get(0).equals("")) remove(0);
     }
-
+    // Normally read by lines:
+    public TextFile(String fileName) {
+        this(fileName, "\n");
+    }
+    public void write(String fileName) {
+        try {
+            PrintWriter out = new PrintWriter(
+                    new File(fileName).getAbsoluteFile());
+            try {
+                for(String item : this)
+                    out.println(item);
+            } finally {
+                out.close();
+            }
+        } catch(IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

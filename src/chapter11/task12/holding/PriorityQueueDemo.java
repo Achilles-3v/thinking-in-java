@@ -28,5 +28,21 @@ public class PriorityQueueDemo {
         priorityQueue.addAll(ints);
         QueueDemo.printQ(priorityQueue);
 
+        String fact = "EDUCATION SHOULD ESCHEW OBFUSCATION";
+        List<String> strings = Arrays.asList(fact.split(""));
+        PriorityQueue<String> stringPQ =
+                new PriorityQueue<String>(strings);
+        QueueDemo.printQ(stringPQ);
+        stringPQ = new PriorityQueue<String>(
+                strings.size(), Collections.reverseOrder());
+        stringPQ.addAll(strings);
+        QueueDemo.printQ(stringPQ);
+
+        Set<Character> charSet = new HashSet<Character>();
+        for(char c : fact.toCharArray())
+            charSet.add(c); // Autoboxing
+        PriorityQueue<Character> characterPQ =
+                new PriorityQueue<Character>(charSet);
+        QueueDemo.printQ(characterPQ);
     }
 }

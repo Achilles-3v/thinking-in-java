@@ -1,7 +1,9 @@
+/*
 package chapter11.task17.holding;
 
 import java.util.*;
 
+*/
 /**
  * Идиома "Метод-Адаптер" позволяет использовать foreach
  * с другими разновидностями Iterable
@@ -9,6 +11,7 @@ import java.util.*;
  * @author Bruce Eckel
  * @param <T>
  */
+/*
 
 class ReversibleArrayList<T> extends ArrayList<T> {
     public ReversibleArrayList(Collection<T> c) { super(c); }
@@ -41,4 +44,4 @@ public class AdapterMethodIdiom {
         for(String s : ral.reversed())
             System.out.print(s + " ");
     }
-}
+}*/

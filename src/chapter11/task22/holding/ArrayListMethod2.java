@@ -16,7 +16,8 @@ public class ArrayListMethod2 {
         arrayList2.add("Petr");
         arrayList2.add("Grigorii");
 
-        arrayList.removeAll(arrayList2);
+//        arrayList.removeAll(arrayList2);
+        arrayList.retainAll(arrayList2);
         System.out.println(arrayList);
     }
 }

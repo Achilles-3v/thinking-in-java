@@ -18,5 +18,11 @@ public class ArrayListMethods {
         StringBuilder[] array = {sb1, sb2, sb3, sb4};
         List<StringBuilder> list = Arrays.asList(array);
         System.out.println(list);
+
+        array[0].append("!!!");
+        System.out.println(list);
+
+        array[1] = new StringBuilder("F");
+        System.out.println(list);
     }
 }

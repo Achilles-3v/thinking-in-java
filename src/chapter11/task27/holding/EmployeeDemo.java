@@ -28,6 +28,10 @@ public class EmployeeDemo {
 
         System.out.println(employees);
 
-        // Collections.sort(employees);
+        Collections.sort(employees);
+        System.out.println(employees);
+
+        int index = Collections.binarySearch(employees, new Employee(182, "Kolya", 9000));
+        System.out.println(index);
     }
 }

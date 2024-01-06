@@ -6,7 +6,7 @@ package chapter11.task27.holding;
  * @author Achilles
  */
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
     int id;
     String name;
     int salary;
@@ -24,5 +24,13 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee anotherEmp) {
+        int result = this.id - anotherEmp.id;
+        if (result == 0)
+            result = this.name.compareTo(anotherEmp.name);
+        return result;
     }
 }

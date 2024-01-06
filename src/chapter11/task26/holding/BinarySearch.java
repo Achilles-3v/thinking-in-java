@@ -23,6 +23,7 @@ public class BinarySearch {
         arrayList.add(-30);
         arrayList.add(19);
 
+        Collections.sort(arrayList);
         int index = Collections.binarySearch(arrayList, 12);
         System.out.println(index);
     }

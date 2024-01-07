@@ -24,5 +24,9 @@ public class HashMapEx2 {
 
         System.out.println(st1.hashCode());
         System.out.println(st4.hashCode());
+
+        for (Map.Entry<Student, Double> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
     }
 }

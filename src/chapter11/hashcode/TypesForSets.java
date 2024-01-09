@@ -7,7 +7,19 @@ import java.util.*;
  * @version 1.42 2023-01-09
  * @author Bruce Eckel
  */
+class SetType {
+    int i;
+    public SetType(int n) { i = n; }
+    public boolean equals(Object o) {
+        return o instanceof SetType && (i == ((SetType)o).i);
+    }
+    public String toString() { return Integer.toString(i); }
+}
 
+class HashType extends SetType {
+    public HashType(int n) { super(n); }
+    public int hashCode() { return i; }
+}
 
 public class TypesForSets {
     static <T> Set<T> fill(Set<T> set, Class<T> type) {

@@ -3,10 +3,10 @@ package chapter11.map_interface;
 import java.util.*;
 
 /**
- * Доступ к значениям в HashMap осуществляется по ключу
- * @version 1.43 2024-01-11
+ * Проверка наличия ключа и значения
+ * @version 1.44 2024-01-11
  */
-public class HashMapEx3 {
+public class HashMapEx4 {
     public static void main(String[] args) {
         HashMap<Integer, String> passportsAndNames = new HashMap<>();
 
@@ -14,10 +14,7 @@ public class HashMapEx3 {
         passportsAndNames.put(627232, "Petrov Petr");
         passportsAndNames.put(324811, "Sidorov Sidor");
 
-        String lidiaName = passportsAndNames.get(323211);
-        System.out.println(lidiaName);
-
-        passportsAndNames.remove(627232);
-        System.out.println(passportsAndNames);
+        System.out.println(passportsAndNames.containsKey(123456));
+        System.out.println(passportsAndNames.containsValue("Sidorov Sidor"));
     }
 }

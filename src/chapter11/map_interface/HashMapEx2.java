@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Попробуем добавить новый элемент с уже имеющимся ключом
- * @version 1.41 2024-01-11
+ * @version 1.42 2024-01-11
  */
 public class HashMapEx2 {
     public static void main(String[] args) {

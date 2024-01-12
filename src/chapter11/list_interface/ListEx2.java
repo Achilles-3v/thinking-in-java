@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Установка нового значения List
- * @version 1.51 2024-01-12
+ * @version 1.52 2024-01-12
  * @author Achilles
  */
 public class ListEx2 {

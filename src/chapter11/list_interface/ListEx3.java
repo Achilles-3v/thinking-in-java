@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Перебор в цикле foreach
- * @version 1.51 2024-01-12
+ * @version 1.53 2024-01-12
  * @author Achilles
  */
 public class ListEx3 {

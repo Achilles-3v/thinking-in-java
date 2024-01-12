@@ -3,11 +3,11 @@ package chapter11.list_interface;
 import java.util.*;
 
 /**
- * Проверяем наличие элемента в List
- * @version 1.54 2024-01-12
+ * Удаление объектов из List
+ * @version 1.55 2024-01-12
  * @author Achilles
  */
-public class ListEx4 {
+public class ListEx5 {
     public static void main(String[] args) {
         List<String> people = new ArrayList<>();
         people.add("Ivan");
@@ -16,8 +16,8 @@ public class ListEx4 {
         people.add("Viktor");
         people.add(1, "Marat");
 
-        if(people.contains("Viktor")){
-            System.out.println("ArrayList contains Viktor");
-        }
+        people.remove("Oleg");
+        people.remove(0);
+        System.out.println(people);
     }
 }

@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /**
  * Обработка данных с помощью stream().map()
  * Заменить слова на значение их длины
- * @version 1.61 2024-01-13
+ * @version 1.62 2024-01-13
  * @author Achilles
  */
 public class StreamMapEx2 {

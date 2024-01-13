@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /**
  * Обработка данных в Set stream().map()
  * Заменить слова на число букв в каждом слове
- * @version 1.64 2024-01-13
+ * @version 1.65 2024-01-13
  * @author Achilles
  */
 public class SetStreamMap {
@@ -18,7 +18,12 @@ public class SetStreamMap {
         set.add("Four?");
         set.add("Five");
 
+        System.out.println(set);
+
         Set<Integer> setInt = set.stream().map(e->e.length()).collect(Collectors.toSet());
         System.out.println(setInt);
+
+        List<Integer> listInt = set.stream().map(e->e.length()).collect(Collectors.toList());
+        System.out.println(listInt);
     }
 }

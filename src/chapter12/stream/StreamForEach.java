@@ -4,6 +4,7 @@ import java.util.*;
 
 /**
  * Использование forEach() в stream()
+ * Референс ссылка
  * @version 1.1 2024-01-14
  * @author Achilles
  */
@@ -15,5 +16,7 @@ public class StreamForEach {
             el*=2;
             System.out.println(el);
         });
+
+        Arrays.stream(array).forEach(System.out::println);
     }
 }

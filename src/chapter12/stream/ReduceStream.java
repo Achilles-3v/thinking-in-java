@@ -1,6 +1,5 @@
 package chapter12.stream;
 
-
 import java.util.*;
 
 /**

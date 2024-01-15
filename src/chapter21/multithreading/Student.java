@@ -12,7 +12,15 @@ class StudentQueue extends Thread {
         this.names = names;
     }
 
-
+    @Override
+    public void run() {
+        for (int i = 0; i < names.length; i++) {
+            System.out.println("Download documents is " + names[i]);
+            try {
+                sleep(700);
+            } catch (Exception e) {}
+        }
+    }
 }
 
 

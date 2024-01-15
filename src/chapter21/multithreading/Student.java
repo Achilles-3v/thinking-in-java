@@ -26,7 +26,12 @@ class StudentQueue extends Thread {
 
 public class Student {
     public static void main(String[] args) {
+        StudentQueue sq1 = new StudentQueue("Oleg", "Ivan", "Danil", "Ruslan");
+        StudentQueue sq2 = new StudentQueue("Mariya", "Svetlana", "Katy", "Sofiya");
 
+        System.out.println("Start!");
+        sq1.start();
+        sq2.start();
     }
 }
 

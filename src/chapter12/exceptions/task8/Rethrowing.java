@@ -28,4 +28,19 @@ public class Rethrowing {
             throw (Exception)e.fillInStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        try {
+            g();
+        } catch(Exception e) {
+            System.out.println("main: printStackTrace()");
+            e.printStackTrace(System.out);
+        }
+        try {
+            h();
+        } catch(Exception e) {
+            System.out.println("main: printStackTrace()");
+            e.printStackTrace(System.out);
+        }
+    }
 }

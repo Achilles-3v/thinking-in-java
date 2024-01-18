@@ -27,4 +27,33 @@ public class DynamicFields {
         }
         return result.toString();
     }
+    private int hasField(String id) {
+        for(int i = 0; i < fields.length; i++)
+            if(id.equals(fields[i][0]))
+                return i;
+        return -1;
+    }
+    private int
+    getFieldNumber(String id) throws NoSuchFieldException {
+        int fieldNum = hasField(id);
+        if(fieldNum == -1)
+            throw new NoSuchFieldException();
+        return fieldNum;
+    }
+    private int makeField(String id) {
+        for(int i = 0; i < fields.length; i++)
+            if(fields[i][0] == null) {
+                fields[i][0] = id;
+                return i;
+            }
+        // No empty fields. Add one:
+        Object[][] tmp = new Object[fields.length + 1][2];
+        for(int i = 0; i < fields.length; i++)
+            tmp[i] = fields[i];
+        for(int i = fields.length; i < tmp.length; i++)
+            tmp[i] = new Object[] { null, null };
+        fields = tmp;
+        // Recursive call with expanded fields:
+        return makeField(id);
+    }
 }

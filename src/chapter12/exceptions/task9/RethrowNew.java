@@ -1,8 +1,9 @@
 package chapter12.exceptions.task9;
 
 /**
- * Демонстрация fillInStackTrace()
- * @version 12.8 2024-01-17
+ * Повторное возбуждение объекта исключения,
+ * отличного от перехваченного
+ * @version 12.9 2024-01-18
  * @author Bruce Eckel
  */
 

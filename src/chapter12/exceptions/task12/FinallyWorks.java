@@ -5,7 +5,6 @@ package chapter12.exceptions.task12;
  * @version 12.12 2024-01-19
  * @author Bruce Eckel
  */
-
 class ThreeException extends Exception {}
 
 public class FinallyWorks {

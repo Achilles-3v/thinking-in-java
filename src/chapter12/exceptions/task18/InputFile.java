@@ -29,4 +29,21 @@ public class InputFile {
             // Don't close it here!!!
         }
     }
+    public String getLine() {
+        String s;
+        try {
+            s = in.readLine();
+        } catch(IOException e) {
+            throw new RuntimeException("readLine() failed");
+        }
+        return s;
+    }
+    public void dispose() {
+        try {
+            in.close();
+            System.out.println("dispose() successful");
+        } catch(IOException e2) {
+            throw new RuntimeException("in.close() failed");
+        }
+    }
 }

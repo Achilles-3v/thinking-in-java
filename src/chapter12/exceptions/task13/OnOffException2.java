@@ -1,3 +1,3 @@
-package chapter12.exceptions.tasks13;
+package chapter12.exceptions.task13;
 
 public class OnOffException2 extends Exception {}

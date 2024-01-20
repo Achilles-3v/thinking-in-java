@@ -2,7 +2,7 @@ package chapter12.exceptions.task14;
 
 /**
  * Finally выполняется всегда
- * @version 12.13 2024-01-20
+ * @version 12.14 2024-01-20
  * @author Bruce Eckel
  */
 public class MultipleReturns {

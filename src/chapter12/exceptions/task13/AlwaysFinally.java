@@ -1,4 +1,4 @@
-package chapter12.exceptions.tasks13;
+package chapter12.exceptions.task13;
 
 /**
  * Finally выполняется всегда

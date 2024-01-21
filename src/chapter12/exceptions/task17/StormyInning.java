@@ -22,5 +22,14 @@ abstract class Inning {
     public void walk() {} // Throws no checked exceptions
 }
 
+class StormException extends Exception {}
+class RainedOut extends StormException {}
+class PopFoul extends Foul {}
+
+interface Storm {
+    public void event() throws RainedOut;
+    public void rainHard() throws RainedOut;
+}
+
 public class StormyInning {
 }

@@ -23,5 +23,13 @@ class WrapCheckedException {
     }
 }
 
+class SomeOtherException extends Exception {}
+
 public class TurnOffChecking {
+    public static void main(String[] args) {
+        WrapCheckedException wce = new WrapCheckedException();
+        // You can call throwRuntimeException() without a try
+        // block, and let RuntimeExceptions leave the method:
+        wce.throwRuntimeException(3);
+    }
 }

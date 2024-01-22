@@ -31,5 +31,26 @@ public class TurnOffChecking {
         // You can call throwRuntimeException() without a try
         // block, and let RuntimeExceptions leave the method:
         wce.throwRuntimeException(3);
+        // Or you can choose to catch exceptions:
+        for(int i = 0; i < 4; i++) {
+            try {
+                if (i < 3)
+                    wce.throwRuntimeException(i);
+                else
+                    throw new SomeOtherException();
+            } catch (SomeOtherException e) {
+                System.out.println("SomeOtherException: " + e);
+            } catch (RuntimeException re) {
+                try {
+                    throw re.getCause();
+                } catch (FileNotFoundException e) {
+                    System.out.println("FileNotFoundException: " + e);
+                } catch (IOException e) {
+                    System.out.println("IOException: " + e);
+                } catch (Throwable e) {
+                    System.out.println("Throwable: " + e);
+                }
+            }
+        }
     }
 }

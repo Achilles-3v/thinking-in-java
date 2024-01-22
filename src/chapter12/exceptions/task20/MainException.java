@@ -3,7 +3,7 @@ package chapter12.exceptions.task20;
 import java.io.*;
 
 /**
- * @version 12.19 2024-01-22
+ * @version 12.20 2024-01-22
  * @author Bruce Eckel
  */
 public class MainException {

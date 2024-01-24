@@ -24,4 +24,12 @@ public class Receipt {
         f.format("%-15s %5s %10.2f\n", "Total", "",
                 total * 1.06);
     }
+    public static void main(String[] args) {
+        Receipt receipt = new Receipt();
+        receipt.printTitle();
+        receipt.print("Jack's Magic Beans", 4, 4.25);
+        receipt.print("Princess Peas", 3, 5.1);
+        receipt.print("Three Bears Porridge", 1, 14.29);
+        receipt.printTotal();
+    }
 }

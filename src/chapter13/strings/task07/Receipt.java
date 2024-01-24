@@ -18,4 +18,10 @@ public class Receipt {
         f.format("%-15.15s %5d %10.2f\n", name, qty, price);
         total += price;
     }
+    public void printTotal() {
+        f.format("%-15s %5s %10.2f\n", "Tax", "", total*0.06);
+        f.format("%-15s %5s %10s\n", "", "", "-----");
+        f.format("%-15s %5s %10.2f\n", "Total", "",
+                total * 1.06);
+    }
 }

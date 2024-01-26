@@ -26,6 +26,7 @@ public class StartEnd {
             System.out.println(message);
         }
     }
+
     static void examine(String s, String regex) {
         Display d = new Display(regex);
         Pattern p = Pattern.compile(regex);
@@ -39,5 +40,14 @@ public class StartEnd {
         if(m.matches()) // No reset() necessary
             d.display("matches() start = "
                     + m.start() + " end = " + m.end());
+    }
+
+    public static void main(String[] args) {
+        for(String in : input.split("\n")) {
+            System.out.println("input : " + in);
+            for(String regex : new String[]{"\\w*ere\\w*",
+                    "\\w*ever", "T\\w+", "Never.*?!"})
+                examine(in, regex);
+        }
     }
 }

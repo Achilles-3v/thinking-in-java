@@ -27,4 +27,10 @@ public class FilledList<T> {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+        FilledList<CountedInteger> fl =
+                new FilledList<CountedInteger>(CountedInteger.class);
+        System.out.println(fl.create(15));
+    }
 }

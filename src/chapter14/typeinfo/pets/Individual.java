@@ -21,9 +21,24 @@ public class Individual implements Comparable<Individual> {
                 id == ((Individual)o).id;
     }
     public int hashCode() {
-        return 0;
+        int result = 17;
+        if(name != null)
+            result = 37 * result + name.hashCode();
+        result = 37 * result + (int)id;
+        return result;
     }
     public int compareTo(Individual arg) {
-        return 0;
+        // Compare by class name first:
+        String first = getClass().getSimpleName();
+        String argFirst = arg.getClass().getSimpleName();
+        int firstCompare = first.compareTo(argFirst);
+        if(firstCompare != 0)
+            return firstCompare;
+        if(name != null && arg.name != null) {
+            int secondCompare = name.compareTo(arg.name);
+            if(secondCompare != 0)
+                return secondCompare;
+        }
+        return (arg.id < id ? -1 : (arg.id == id ? 0 : 1));
     }
 }

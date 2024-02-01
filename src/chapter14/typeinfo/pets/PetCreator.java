@@ -29,4 +29,10 @@ public abstract class PetCreator {
             result[i] = randomPet();
         return result;
     }
+
+    public ArrayList<Pet> arrayList(int size) {
+        ArrayList<Pet> result = new ArrayList<Pet>();
+        Collections.addAll(result, createArray(size));
+        return result;
+    }
 }

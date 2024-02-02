@@ -7,7 +7,7 @@ import java.util.*;
  * @version 14.37 2024-02-02
  * @author Bruce Eckel
  */
-public class LiteralPetCreator {
+public class LiteralPetCreator extends PetCreator{
     @SuppressWarnings("unchecked")
     public static final List<Class<? extends Pet>> allTypes =
             Collections.unmodifiableList(Arrays.asList(

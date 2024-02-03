@@ -49,5 +49,21 @@ class CabinAirFilter extends Filter {
     }
 }
 
+class OilFilter extends Filter {
+    public static class Factory
+            implements typeinfo.factory.Factory<OilFilter> {
+        public OilFilter create() { return new OilFilter(); }
+    }
+}
+
+class Belt extends Part {}
+
+class FanBelt extends Belt {
+    public static class Factory
+            implements typeinfo.factory.Factory<FanBelt> {
+        public FanBelt create() { return new FanBelt(); }
+    }
+}
+
 public class RegisteredFactories {
 }

@@ -26,4 +26,9 @@ public class FamilyVsExactType {
         System.out.println("x.getClass().equals(Derived.class)) " +
                 (x.getClass().equals(Derived.class)));
     }
+
+    public static void main(String[] args) {
+        test(new Base());
+        test(new Derived());
+    }
 }

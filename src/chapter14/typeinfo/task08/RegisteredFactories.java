@@ -33,5 +33,21 @@ class FuelFilter extends Filter {
     }
 }
 
+class AirFilter extends Filter {
+    public static class Factory
+            implements typeinfo.factory.Factory<AirFilter> {
+        public AirFilter create() { return new AirFilter(); }
+    }
+}
+
+class CabinAirFilter extends Filter {
+    public static class Factory
+            implements typeinfo.factory.Factory<CabinAirFilter> {
+        public CabinAirFilter create() {
+            return new CabinAirFilter();
+        }
+    }
+}
+
 public class RegisteredFactories {
 }

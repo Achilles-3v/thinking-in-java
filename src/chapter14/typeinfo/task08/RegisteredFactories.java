@@ -65,5 +65,23 @@ class FanBelt extends Belt {
     }
 }
 
+class GeneratorBelt extends Belt {
+    public static class Factory
+            implements typeinfo.factory.Factory<GeneratorBelt> {
+        public GeneratorBelt create() {
+            return new GeneratorBelt();
+        }
+    }
+}
+
+class PowerSteeringBelt extends Belt {
+    public static class Factory
+            implements typeinfo.factory.Factory<PowerSteeringBelt> {
+        public PowerSteeringBelt create() {
+            return new PowerSteeringBelt();
+        }
+    }
+}
+
 public class RegisteredFactories {
 }

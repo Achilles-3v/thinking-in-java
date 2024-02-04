@@ -1,10 +1,10 @@
-package chapter14.typeinfo.task12;
+package chapter14.typeinfo.task11;
 
 import java.lang.reflect.*;
 
 /**
  * Структура динамического заместителя
- * @version 14.12 2024-02-04
+ * @version 14.11 2024-02-04
  * @author Bruce Eckel
  */
 
@@ -26,5 +26,18 @@ class DynamicProxyHandler implements InvocationHandler {
 }
 
 public class SimpleDynamicProxy {
-
+    public static void consumer(Interface iface) {
+        iface.doSomething();
+        iface.somethingElse("bonobo");
+    }
+    public static void main(String[] args) {
+        RealObject real = new RealObject();
+        consumer(real);
+        // Insert a proxy and call again:
+        Interface proxy = (Interface)Proxy.newProxyInstance(
+                Interface.class.getClassLoader(),
+                new Class[]{ Interface.class },
+                new DynamicProxyHandler(real));
+        consumer(proxy);
+    }
 }

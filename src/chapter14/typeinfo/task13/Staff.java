@@ -36,4 +36,21 @@ public class Staff extends ArrayList<Position> {
         throw new RuntimeException(
                 "Position " + title + " not available");
     }
+
+    public static void main(String[] args) {
+        Staff staff = new Staff("President", "CTO",
+                "Marketing Manager", "Product Manager",
+                "Project Lead", "Software Engineer",
+                "Software Engineer", "Software Engineer",
+                "Software Engineer", "Test Engineer",
+                "Technical Writer");
+        staff.fillPosition("President",
+                new Person("Me", "Last", "The Top, Lonely At"));
+        staff.fillPosition("Project Lead",
+                new Person("Janet", "Planner", "The Burbs"));
+        if(staff.positionAvailable("Software Engineer"))
+            staff.fillPosition("Software Engineer",
+                    new Person("Bob", "Coder", "Bright Light City"));
+        System.out.println(staff);
+    }
 }

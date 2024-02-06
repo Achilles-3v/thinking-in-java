@@ -35,4 +35,8 @@ public class SnowRemovalRobot implements Robot {
                 }
         );
     }
+
+    public static void main(String[] args) {
+        Robot.Test.test(new SnowRemovalRobot("Slusher"));
+    }
 }

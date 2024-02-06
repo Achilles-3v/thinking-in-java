@@ -15,4 +15,14 @@ public class Staff extends ArrayList<Position> {
         for(String title : titles)
             add(new Position(title));
     }
+
+    public Staff(String... titles) { add(titles); }
+
+    public boolean positionAvailable(String title) {
+        for(Position position : this)
+            if(position.getTitle().equals(title) &&
+                    position.getPerson() == Person.NULL)
+                return true;
+        return false;
+    }
 }

@@ -25,4 +25,15 @@ public class Staff extends ArrayList<Position> {
                 return true;
         return false;
     }
+
+    public void fillPosition(String title, Person hire) {
+        for(Position position : this)
+            if(position.getTitle().equals(title) &&
+                    position.getPerson() == Person.NULL) {
+                position.setPerson(hire);
+                return;
+            }
+        throw new RuntimeException(
+                "Position " + title + " not available");
+    }
 }

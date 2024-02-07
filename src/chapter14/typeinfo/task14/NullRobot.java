@@ -31,4 +31,11 @@ class NullRobotProxyHandler implements InvocationHandler {
 }
 
 public class NullRobot {
+    public static Robot
+    newNullRobot(Class<? extends Robot> type) {
+        return (Robot)Proxy.newProxyInstance(
+                NullRobot.class.getClassLoader(),
+                new Class[]{ Null.class, Robot.class },
+                new NullRobotProxyHandler(type));
+    }
 }

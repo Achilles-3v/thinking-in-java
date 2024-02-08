@@ -26,4 +26,14 @@ class AnonymousA {
 }
 
 public class AnonymousImplementation {
+    public static void main(String[] args) throws Exception {
+        A a = AnonymousA.makeA();
+        a.f();
+        System.out.println(a.getClass().getName());
+        // Reflection still gets into the anonymous class:
+        HiddenImplementation.callHiddenMethod(a, "g");
+        HiddenImplementation.callHiddenMethod(a, "u");
+        HiddenImplementation.callHiddenMethod(a, "v");
+        HiddenImplementation.callHiddenMethod(a, "w");
+    }
 }

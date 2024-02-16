@@ -35,5 +35,18 @@ class Product {
     };
 }
 
+class Shelf extends ArrayList<Product> {
+    public Shelf(int nProducts) {
+        Generators.fill(this, Product.generator, nProducts);
+    }
+}
+
+class Aisle extends ArrayList<Shelf> {
+    public Aisle(int nShelves, int nProducts) {
+        for(int i = 0; i < nShelves; i++)
+            add(new Shelf(nProducts));
+    }
+}
+
 public class Store {
 }

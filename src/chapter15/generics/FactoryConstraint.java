@@ -18,5 +18,19 @@ class Foo2<T> {
     // ...
 }
 
+class IntegerFactory implements FactoryI<Integer> {
+    public Integer create() {
+        return new Integer(0);
+    }
+}
+
+class Widget {
+    public static class Factory implements FactoryI<Widget> {
+        public Widget create() {
+            return new Widget();
+        }
+    }
+}
+
 public class FactoryConstraint {
 }

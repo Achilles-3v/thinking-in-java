@@ -19,4 +19,16 @@ public class GenericArray2<T> {
     public T[] rep() {
         return (T[])array; // Warning: unchecked cast
     }
+    public static void main(String[] args) {
+        GenericArray2<Integer> gai =
+                new GenericArray2<Integer>(10);
+        for(int i = 0; i < 10; i ++)
+            gai.put(i, i);
+        for(int i = 0; i < 10; i ++)
+            System.out.print(gai.get(i) + " ");
+        System.out.println();
+        try {
+            Integer[] ia = gai.rep();
+        } catch(Exception e) { System.out.println(e); }
+    }
 }

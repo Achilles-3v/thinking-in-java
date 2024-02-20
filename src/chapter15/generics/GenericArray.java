@@ -17,4 +17,9 @@ public class GenericArray<T> {
     public T get(int index) { return array[index]; }
     // Method that exposes the underlying representation:
     public T[] rep() { return array; }
+    public static void main(String[] args) {
+        GenericArray<Integer> gai =
+                new GenericArray<Integer>(10);
+        Object[] oa = gai.rep();
+    }
 }

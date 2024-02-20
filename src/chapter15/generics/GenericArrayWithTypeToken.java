@@ -18,4 +18,10 @@ public class GenericArrayWithTypeToken<T> {
     public T get(int index) { return array[index]; }
     // Expose the underlying representation:
     public T[] rep() { return array; }
+    public static void main(String[] args) {
+        GenericArrayWithTypeToken<Integer> gai =
+                new GenericArrayWithTypeToken<Integer>(
+                        Integer.class, 10);
+        Integer[] ia = gai.rep();
+    }
 }

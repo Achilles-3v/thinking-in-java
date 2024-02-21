@@ -19,5 +19,17 @@ interface SuperSmell extends SuperPower {
     void trackBySmell();
 }
 
+class SuperHero<POWER extends SuperPower> {
+    POWER power;
+    SuperHero(POWER power) { this.power = power; }
+    POWER getPower() { return power; }
+}
+
+class SuperSleuth<POWER extends XRayVision>
+        extends SuperHero<POWER> {
+    SuperSleuth(POWER power) { super(power); }
+    void see() { power.seeThroughWalls(); }
+}
+
 public class EpicBattle {
 }

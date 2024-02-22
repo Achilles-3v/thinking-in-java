@@ -31,5 +31,21 @@ class SuperSleuth<POWER extends XRayVision>
     void see() { power.seeThroughWalls(); }
 }
 
+class CanineHero<POWER extends SuperHearing & SuperSmell>
+        extends SuperHero<POWER> {
+    CanineHero(POWER power) { super(power); }
+    void hear() { power.hearSubtleNoises(); }
+    void smell() { power.trackBySmell(); }
+}
+
+class SuperHearSmell implements SuperHearing, SuperSmell {
+    public void hearSubtleNoises() {}
+    public void trackBySmell() {}
+}
+
+class DogBoy extends CanineHero<SuperHearSmell> {
+    DogBoy() { super(new SuperHearSmell()); }
+}
+
 public class EpicBattle {
 }

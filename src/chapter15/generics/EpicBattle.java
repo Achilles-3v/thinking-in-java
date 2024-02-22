@@ -57,4 +57,14 @@ public class EpicBattle {
         hero.getPower().hearSubtleNoises();
         hero.getPower().trackBySmell();
     }
+
+    public static void main(String[] args) {
+        DogBoy dogBoy = new DogBoy();
+        useSuperHearing(dogBoy);
+        superFind(dogBoy);
+        // You can do this:
+        List<? extends SuperHearing> audioBoys;
+        // But you can't do this:
+        // List<? extends SuperHearing & SuperSmell> dogBoys;
+    }
 }

@@ -41,4 +41,7 @@ public class GenericReading {
         Fruit f = fruitReader.readCovariant(fruit);
         Fruit a = fruitReader.readCovariant(apples);
     }
+    public static void main(String[] args) {
+        f1(); f2(); f3();
+    }
 }

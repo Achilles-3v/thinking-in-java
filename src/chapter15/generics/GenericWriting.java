@@ -27,4 +27,6 @@ public class GenericWriting {
         writeWithWildcard(apples, new Apple());
         writeWithWildcard(fruit, new Apple());
     }
+
+    public static void main(String[] args) { f1(); f2(); }
 }

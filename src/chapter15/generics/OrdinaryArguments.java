@@ -13,4 +13,11 @@ class DerivedSetter extends OrdinarySetter {
 }
 
 public class OrdinaryArguments {
+    public static void main(String[] args) {
+        Base base = new Base();
+        Derived derived = new Derived();
+        DerivedSetter ds = new DerivedSetter();
+        ds.set(derived);
+        ds.set(base); // Compiles: overloaded, not overridden!
+    }
 }

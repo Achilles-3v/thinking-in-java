@@ -13,4 +13,11 @@ class DerivedGS extends GenericSetter<Base> {
 }
 
 public class PlainGenericInheritance {
+    public static void main(String[] args) {
+        Base base = new Base();
+        Derived derived = new Derived();
+        DerivedGS dgs = new DerivedGS();
+        dgs.set(derived);
+        dgs.set(base);
+    }
 }

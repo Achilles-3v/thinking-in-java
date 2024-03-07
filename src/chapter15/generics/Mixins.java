@@ -31,5 +31,25 @@ class BasicImp implements Basic {
     public String get() { return value; }
 }
 
+class Mixin extends BasicImp
+        implements TimeStamped, SerialNumbered {
+    private TimeStamped timeStamp = new TimeStampedImp();
+    private SerialNumbered serialNumber =
+            new SerialNumberedImp();
+    public long getStamp() { return timeStamp.getStamp(); }
+    public long getSerialNumber() {
+        return serialNumber.getSerialNumber();
+    }
+}
+
 public class Mixins {
+    public static void main(String[] args) {
+        Mixin mixin1 = new Mixin(), mixin2 = new Mixin();
+        mixin1.set("test string 1");
+        mixin2.set("test string 2");
+        System.out.println(mixin1.get() + " " +
+                mixin1.getStamp() +  " " + mixin1.getSerialNumber());
+        System.out.println(mixin2.get() + " " +
+                mixin2.getStamp() +  " " + mixin2.getSerialNumber());
+    }
 }

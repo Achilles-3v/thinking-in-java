@@ -16,5 +16,36 @@ class ProcessRunner<T,E extends Exception>
     }
 }
 
+class Failure1 extends Exception {}
+
+class Processor1 implements Processor<String,Failure1> {
+    static int count = 3;
+    public void
+    process(List<String> resultCollector) throws Failure1 {
+        if(count-- > 1)
+            resultCollector.add("Hep!");
+        else
+            resultCollector.add("Ho!");
+        if(count < 0)
+            throw new Failure1();
+    }
+}
+
+class Failure2 extends Exception {}
+
+class Processor2 implements Processor<Integer,Failure2> {
+    static int count = 2;
+    public void
+    process(List<Integer> resultCollector) throws Failure2 {
+        if(count-- == 0)
+            resultCollector.add(47);
+        else {
+            resultCollector.add(11);
+        }
+        if(count < 0)
+            throw new Failure2();
+    }
+}
+
 public class ThrowGenericException {
 }

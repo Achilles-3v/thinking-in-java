@@ -27,7 +27,14 @@ class MixinProxy implements InvocationHandler {
     }
     @SuppressWarnings("unchecked")
     public static Object newInstance(TwoTuple... pairs) {
-        return null;
+        Class[] interfaces = new Class[pairs.length];
+        for(int i = 0; i < pairs.length; i++) {
+            interfaces[i] = (Class)pairs[i].second;
+        }
+        ClassLoader cl =
+                pairs[0].first.getClass().getClassLoader();
+        return Proxy.newProxyInstance(
+                cl, interfaces, new MixinProxy(pairs));
     }
 }
 

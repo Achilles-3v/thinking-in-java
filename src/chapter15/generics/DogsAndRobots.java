@@ -10,5 +10,21 @@ class PerformingDog extends Dog implements Performs {
     public void reproduce() {}
 }
 
+class Robot implements Performs {
+    public void speak() {
+        System.out.println("Click!"); }
+    public void sit() {
+        System.out.println("Clank!"); }
+    public void oilChange() {}
+}
+
+class Communicate {
+    public static <T extends Performs>
+    void perform(T performer) {
+        performer.speak();
+        performer.sit();
+    }
+}
+
 public class DogsAndRobots {
 }

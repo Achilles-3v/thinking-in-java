@@ -15,4 +15,26 @@ public class Fill {
     }
 }
 
+class Contract {
+    private static long counter = 0;
+    private final long id = counter++;
+    public String toString() {
+        return getClass().getName() + " " + id;
+    }
+}
 
+class TitleTransfer extends Contract {}
+
+class FillTest {
+    public static void main(String[] args) {
+        List<Contract> contracts = new ArrayList<Contract>();
+        Fill.fill(contracts, Contract.class, 3);
+        Fill.fill(contracts, TitleTransfer.class, 2);
+        for(Contract c: contracts)
+            System.out.println(c);
+        SimpleQueue<Contract> contractQueue =
+                new SimpleQueue<Contract>();
+        // Won't work. fill() is not generic enough:
+        // Fill.fill(contractQueue, Contract.class, 3);
+    }
+}

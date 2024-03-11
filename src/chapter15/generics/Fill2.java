@@ -16,3 +16,15 @@ class AddableCollectionAdapter<T> implements Addable<T> {
     }
     public void add(T item) { c.add(item); }
 }
+
+class Adapter {
+    public static <T>
+    Addable<T> collectionAdapter(Collection<T> c) {
+        return new AddableCollectionAdapter<T>(c);
+    }
+}
+
+class AddableSimpleQueue<T>
+        extends SimpleQueue<T> implements Addable<T> {
+    public void add(T item) { super.add(item); }
+}

@@ -59,4 +59,48 @@ public class Functional {
             return x - y;
         }
     }
+    static class
+    BigDecimalAdder implements Combiner<BigDecimal> {
+        public BigDecimal combine(BigDecimal x, BigDecimal y) {
+            return x.add(y);
+        }
+    }
+    static class
+    BigIntegerAdder implements Combiner<BigInteger> {
+        public BigInteger combine(BigInteger x, BigInteger y) {
+            return x.add(y);
+        }
+    }
+    static class
+    AtomicLongAdder implements Combiner<AtomicLong> {
+        public AtomicLong combine(AtomicLong x, AtomicLong y) {
+            // Not clear whether this is meaningful:
+            return new AtomicLong(x.addAndGet(y.get()));
+        }
+    }
+
+    static class BigDecimalUlp
+            implements UnaryFunction<BigDecimal,BigDecimal> {
+        public BigDecimal function(BigDecimal x) {
+            return x.ulp();
+        }
+    }
+    static class GreaterThan<T extends Comparable<T>>
+            implements UnaryPredicate<T> {
+        private T bound;
+        public GreaterThan(T bound) { this.bound = bound; }
+        public boolean test(T x) {
+            return x.compareTo(bound) > 0;
+        }
+    }
+    static class MultiplyingIntegerCollector
+            implements Collector<Integer> {
+        private Integer val = 1;
+        public Integer function(Integer x) {
+            val *= x;
+            return val;
+        }
+        public Integer result() { return val; }
+    }
+
 }

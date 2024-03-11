@@ -102,5 +102,53 @@ public class Functional {
         }
         public Integer result() { return val; }
     }
+    public static void main(String[] args) {
+        // Generics, varargs & boxing working together:
+        List<Integer> li = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+        Integer result = reduce(li, new IntegerAdder());
+        System.out.println(result);
 
+        result = reduce(li, new IntegerSubtracter());
+        System.out.println(result);
+
+        System.out.println(filter(li, new GreaterThan<Integer>(4)));
+
+        System.out.println(forEach(li,
+                new MultiplyingIntegerCollector()).result());
+
+        System.out.println(forEach(filter(li, new GreaterThan<Integer>(4)),
+                new MultiplyingIntegerCollector()).result());
+
+        MathContext mc = new MathContext(7);
+        List<BigDecimal> lbd = Arrays.asList(
+                new BigDecimal(1.1, mc), new BigDecimal(2.2, mc),
+                new BigDecimal(3.3, mc), new BigDecimal(4.4, mc));
+        BigDecimal rbd = reduce(lbd, new BigDecimalAdder());
+        System.out.println(rbd);
+
+        System.out.println(filter(lbd,
+                new GreaterThan<BigDecimal>(new BigDecimal(3))));
+
+        // Use the prime-generation facility of BigInteger:
+        List<BigInteger> lbi = new ArrayList<BigInteger>();
+        BigInteger bi = BigInteger.valueOf(11);
+        for(int i = 0; i < 11; i++) {
+            lbi.add(bi);
+            bi = bi.nextProbablePrime();
+        }
+        System.out.println(lbi);
+
+        BigInteger rbi = reduce(lbi, new BigIntegerAdder());
+        System.out.println(rbi);
+        // The sum of this list of primes is also prime:
+        System.out.println(rbi.isProbablePrime(5));
+
+        List<AtomicLong> lal = Arrays.asList(
+                new AtomicLong(11), new AtomicLong(47),
+                new AtomicLong(74), new AtomicLong(133));
+        AtomicLong ral = reduce(lal, new AtomicLongAdder());
+        System.out.println(ral);
+
+        System.out.println(transform(lbd,new BigDecimalUlp()));
+    }
 }

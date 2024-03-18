@@ -35,4 +35,25 @@ public class MapData<K,V> extends LinkedHashMap<K,V> {
             put(key, value);
         }
     }
+    // Generic convenience methods:
+    public static <K,V> MapData<K,V>
+    map(Generator<Pair<K,V>> gen, int quantity) {
+        return new MapData<K,V>(gen, quantity);
+    }
+    public static <K,V> MapData<K,V>
+    map(Generator<K> genK, Generator<V> genV, int quantity) {
+        return new MapData<K,V>(genK, genV, quantity);
+    }
+    public static <K,V> MapData<K,V>
+    map(Generator<K> genK, V value, int quantity) {
+        return new MapData<K,V>(genK, value, quantity);
+    }
+    public static <K,V> MapData<K,V>
+    map(Iterable<K> genK, Generator<V> genV) {
+        return new MapData<K,V>(genK, genV);
+    }
+    public static <K,V> MapData<K,V>
+    map(Iterable<K> genK, V value) {
+        return new MapData<K,V>(genK, value);
+    }
 }

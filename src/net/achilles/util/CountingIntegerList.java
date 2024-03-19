@@ -12,4 +12,7 @@ public class CountingIntegerList
         return Integer.valueOf(index);
     }
     public int size() { return size; }
+    public static void main(String[] args) {
+        System.out.println(new CountingIntegerList(30));
+    }
 }

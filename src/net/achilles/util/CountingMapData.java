@@ -40,4 +40,7 @@ public class CountingMapData
             entries.add(new Entry(i));
         return entries;
     }
+    public static void main(String[] args) {
+        System.out.println(new CountingMapData(60));
+    }
 }

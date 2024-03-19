@@ -187,4 +187,27 @@ public class Countries {
             return entries;
         }
     }
+
+    static Map<String,String> select(final int size) {
+        return new FlyweightMap() {
+            public Set<Map.Entry<String,String>> entrySet() {
+                return new EntrySet(size);
+            }
+        };
+    }
+    static Map<String,String> map = new FlyweightMap();
+    public static Map<String,String> capitals() {
+        return map; // The entire map
+    }
+    public static Map<String,String> capitals(int size) {
+        return select(size); // A partial map
+    }
+    static List<String> names =
+            new ArrayList<String>(map.keySet());
+    // All the names:
+    public static List<String> names() { return names; }
+    // A partial list:
+    public static List<String> names(int size) {
+        return new ArrayList<String>(select(size).keySet());
+    }
 }

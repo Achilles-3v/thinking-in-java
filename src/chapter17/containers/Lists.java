@@ -96,4 +96,22 @@ public class Lists {
         System.out.println(ll.removeLast());
         System.out.println(ll);
     }
+
+    public static void main(String[] args) {
+        basicTest(
+                new LinkedList<String>(Countries.names(25)));
+        basicTest(
+                new ArrayList<String>(Countries.names(25)));
+        iterMotion(
+                new LinkedList<String>(Countries.names(25)));
+        iterMotion(
+                new ArrayList<String>(Countries.names(25)));
+        iterManipulation(
+                new LinkedList<String>(Countries.names(25)));
+        iterManipulation(
+                new ArrayList<String>(Countries.names(25)));
+        testVisual(
+                new LinkedList<String>(Countries.names(25)));
+        testLinkedList();
+    }
 }

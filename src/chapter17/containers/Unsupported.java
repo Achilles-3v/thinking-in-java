@@ -35,4 +35,14 @@ public class Unsupported {
             System.out.println("List.set(): " + e);
         }
     }
+
+    public static void main(String[] args) {
+        List<String> list =
+                Arrays.asList("A B C D E F G H I J K L".split(" "));
+        test("Modifiable Copy", new ArrayList<String>(list));
+        test("Arrays.asList()", list);
+        test("unmodifiableList()",
+                Collections.unmodifiableList(
+                        new ArrayList<String>(list)));
+    }
 }

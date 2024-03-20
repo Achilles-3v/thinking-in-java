@@ -40,4 +40,60 @@ public class Lists {
         i = a.size(); // How big is it?
         a.clear(); // Remove all elements
     }
+
+    public static void iterMotion(List<String> a) {
+        ListIterator<String> it = a.listIterator();
+        b = it.hasNext();
+        b = it.hasPrevious();
+        s = it.next();
+        i = it.nextIndex();
+        s = it.previous();
+        i = it.previousIndex();
+    }
+
+    public static void iterManipulation(List<String> a) {
+        ListIterator<String> it = a.listIterator();
+        it.add("47");
+        it.next();
+        it.remove();
+        it.next();
+        it.set("47");
+    }
+
+    public static void testVisual(List<String> a) {
+        System.out.println(a);
+        List<String> b = Countries.names(25);
+        System.out.println("b = " + b);
+        a.addAll(b);
+        a.addAll(b);
+        System.out.println(a);
+        ListIterator<String> x = a.listIterator(a.size()/2);
+        x.add("one");
+        System.out.println(a);
+        System.out.println(x.next());
+        x.remove();
+        System.out.println(x.next());
+        x.set("47");
+        System.out.println(a);
+        // Traverse the list backwards:
+        x = a.listIterator(a.size());
+        while(x.hasPrevious())
+            System.out.print(x.previous() + " ");
+        System.out.println();
+        System.out.println("testVisual finished");
+    }
+
+    public static void testLinkedList() {
+        LinkedList<String> ll = new LinkedList<String>();
+        ll.addAll(Countries.names(25));
+        System.out.println(ll);
+        ll.addFirst("one");
+        ll.addFirst("two");
+        System.out.println(ll);
+        System.out.println(ll.getFirst());
+        System.out.println(ll.removeFirst());
+        System.out.println(ll.removeFirst());
+        System.out.println(ll.removeLast());
+        System.out.println(ll);
+    }
 }

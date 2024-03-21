@@ -19,4 +19,13 @@ public class QueueBehavior {
         int i;
         public String next() { return s[i++]; }
     }
+
+    public static void main(String[] args) {
+        test(new LinkedList<String>(), new Gen());
+        test(new PriorityQueue<String>(), new Gen());
+        test(new ArrayBlockingQueue<String>(count), new Gen());
+        test(new ConcurrentLinkedQueue<String>(), new Gen());
+        test(new LinkedBlockingQueue<String>(), new Gen());
+        test(new PriorityBlockingQueue<String>(), new Gen());
+    }
 }

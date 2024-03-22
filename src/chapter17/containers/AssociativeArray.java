@@ -29,4 +29,22 @@ public class AssociativeArray<K,V> {
         }
         return result.toString();
     }
+
+    public static void main(String[] args) {
+        AssociativeArray<String,String> map =
+                new AssociativeArray<String,String>(6);
+        map.put("sky", "blue");
+        map.put("grass", "green");
+        map.put("ocean", "dancing");
+        map.put("tree", "tall");
+        map.put("earth", "brown");
+        map.put("sun", "warm");
+        try {
+            map.put("extra", "object"); // Past the end
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Too many objects!");
+        }
+        System.out.println(map);
+        System.out.println(map.get("ocean"));
+    }
 }

@@ -9,4 +9,16 @@ public class DequeTest {
         for(int i = 50; i < 55; i++)
             deque.addLast(i);
     }
+
+    public static void main(String[] args) {
+        Deque<Integer> di = new Deque<Integer>();
+        fillTest(di);
+        System.out.println(di);
+        while(di.size() != 0)
+            System.out.print(di.removeFirst() + " ");
+        System.out.println();
+        fillTest(di);
+        while(di.size() != 0)
+            System.out.print(di.removeLast() + " ");
+    }
 }

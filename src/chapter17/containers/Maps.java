@@ -36,4 +36,13 @@ public class Maps {
         map.keySet().removeAll(map.keySet());
         System.out.println("map.isEmpty(): " + map.isEmpty());
     }
+
+    public static void main(String[] args) {
+        test(new HashMap<Integer,String>());
+        test(new TreeMap<Integer,String>());
+        test(new LinkedHashMap<Integer,String>());
+        test(new IdentityHashMap<Integer,String>());
+        test(new ConcurrentHashMap<Integer,String>());
+        test(new WeakHashMap<Integer,String>());
+    }
 }

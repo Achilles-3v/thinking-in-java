@@ -28,4 +28,11 @@ public class SlowMap<K,V> extends AbstractMap<K,V> {
             set.add(new MapEntry<K,V>(ki.next(), vi.next()));
         return set;
     }
+    public static void main(String[] args) {
+        SlowMap<String,String> m= new SlowMap<String,String>();
+        m.putAll(Countries.capitals(15));
+        System.out.println(m);
+        System.out.println(m.get("BULGARIA"));
+        System.out.println(m.entrySet());
+    }
 }

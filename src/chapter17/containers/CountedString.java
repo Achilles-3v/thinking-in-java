@@ -34,4 +34,18 @@ public class CountedString {
                 s.equals(((CountedString)o).s) &&
                 id == ((CountedString)o).id;
     }
+    public static void main(String[] args) {
+        Map<CountedString,Integer> map =
+                new HashMap<CountedString,Integer>();
+        CountedString[] cs = new CountedString[5];
+        for(int i = 0; i < cs.length; i++) {
+            cs[i] = new CountedString("hi");
+            map.put(cs[i], i); // Autobox int -> Integer
+        }
+        System.out.println(map);
+        for(CountedString cstring : cs) {
+            System.out.println("Looking up " + cstring);
+            System.out.println(map.get(cstring));
+        }
+    }
 }

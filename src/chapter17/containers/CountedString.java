@@ -16,4 +16,22 @@ public class CountedString {
             if(s2.equals(s))
                 id++;
     }
+    public String toString() {
+        return "String: " + s + " id: " + id +
+                " hashCode(): " + hashCode();
+    }
+    public int hashCode() {
+        // The very simple approach:
+        // return s.hashCode() * id;
+        // Using Joshua Bloch's recipe:
+        int result = 17;
+        result = 37 * result + s.hashCode();
+        result = 37 * result + id;
+        return result;
+    }
+    public boolean equals(Object o) {
+        return o instanceof CountedString &&
+                s.equals(((CountedString)o).s) &&
+                id == ((CountedString)o).id;
+    }
 }

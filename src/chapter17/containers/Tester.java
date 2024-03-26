@@ -53,4 +53,21 @@ public class Tester<C> {
             System.out.format(stringField(), test.name);
         System.out.println();
     }
+    // Run the tests for this container:
+    public void timedTest() {
+        displayHeader();
+        for(TestParam param : paramList) {
+            System.out.format(sizeField, param.size);
+            for(Test<C> test : tests) {
+                C kontainer = initialize(param.size);
+                long start = System.nanoTime();
+                // Call the overriden method:
+                int reps = test.test(kontainer, param);
+                long duration = System.nanoTime() - start;
+                long timePerRep = duration / reps; // Nanoseconds
+                System.out.format(numberField(), timePerRep);
+            }
+            System.out.println();
+        }
+    }
 }

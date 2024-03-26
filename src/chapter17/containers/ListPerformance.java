@@ -143,4 +143,35 @@ public class ListPerformance {
             new ListTester(list, tests).timedTest();
         }
     }
+    public static void main(String[] args) {
+        if(args.length > 0)
+            Tester.defaultParams = TestParam.array(args);
+        // Can only do these two tests on an array:
+        Tester<List<Integer>> arrayTest =
+                new Tester<List<Integer>>(null, tests.subList(1, 3)){
+                    // This will be called before each test. It
+                    // produces a non-resizeable array-backed list:
+                    @Override protected
+                    List<Integer> initialize(int size) {
+                        Integer[] ia = Generated.array(Integer.class,
+                                new CountingGenerator.Integer(), size);
+                        return Arrays.asList(ia);
+                    }
+                };
+        arrayTest.setHeadline("Array as List");
+        arrayTest.timedTest();
+        Tester.defaultParams= TestParam.array(
+                10, 5000, 100, 5000, 1000, 1000, 10000, 200);
+        if(args.length > 0)
+            Tester.defaultParams = TestParam.array(args);
+        ListTester.run(new ArrayList<Integer>(), tests);
+        ListTester.run(new LinkedList<Integer>(), tests);
+        ListTester.run(new Vector<Integer>(), tests);
+        Tester.fieldWidth = 12;
+        Tester<LinkedList<Integer>> qTest =
+                new Tester<LinkedList<Integer>>(
+                        new LinkedList<Integer>(), qTests);
+        qTest.setHeadline("Queue tests");
+        qTest.timedTest();
+    }
 }

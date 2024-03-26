@@ -34,4 +34,23 @@ public class Tester<C> {
     public void setHeadline(String newHeadline) {
         headline = newHeadline;
     }
+    private void displayHeader() {
+        // Calculate width and pad with '-':
+        int width = fieldWidth * tests.size() + sizeWidth;
+        int dashLength = width - headline.length() - 1;
+        StringBuilder head = new StringBuilder(width);
+        for(int i = 0; i < dashLength/2; i++)
+            head.append('-');
+        head.append(' ');
+        head.append(headline);
+        head.append(' ');
+        for(int i = 0; i < dashLength/2; i++)
+            head.append('-');
+        System.out.println(head);
+        // Print column headers:
+        System.out.format(sizeField, "size");
+        for(Test test : tests)
+            System.out.format(stringField(), test.name);
+        System.out.println();
+    }
 }

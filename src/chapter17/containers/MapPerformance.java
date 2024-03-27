@@ -40,4 +40,15 @@ public class MapPerformance {
             }
         });
     }
+    public static void main(String[] args) {
+        if(args.length > 0)
+            Tester.defaultParams = TestParam.array(args);
+        Tester.run(new TreeMap<Integer,Integer>(), tests);
+        Tester.run(new HashMap<Integer,Integer>(), tests);
+        Tester.run(new LinkedHashMap<Integer,Integer>(),tests);
+        Tester.run(
+                new IdentityHashMap<Integer,Integer>(), tests);
+        Tester.run(new WeakHashMap<Integer,Integer>(), tests);
+        Tester.run(new Hashtable<Integer,Integer>(), tests);
+    }
 }

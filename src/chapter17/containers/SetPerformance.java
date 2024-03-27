@@ -40,4 +40,12 @@ public class SetPerformance {
             }
         });
     }
+    public static void main(String[] args) {
+        if(args.length > 0)
+            Tester.defaultParams = TestParam.array(args);
+        Tester.fieldWidth = 10;
+        Tester.run(new TreeSet<Integer>(), tests);
+        Tester.run(new HashSet<Integer>(), tests);
+        Tester.run(new LinkedHashSet<Integer>(), tests);
+    }
 }

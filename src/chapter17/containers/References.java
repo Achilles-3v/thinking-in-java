@@ -15,4 +15,11 @@ class VeryBig {
 }
 
 public class References {
+    private static ReferenceQueue<VeryBig> rq =
+            new ReferenceQueue<VeryBig>();
+    public static void checkQueue() {
+        Reference<? extends VeryBig> inq = rq.poll();
+        if(inq != null)
+            System.out.println("In queue: " + inq.get());
+    }
 }

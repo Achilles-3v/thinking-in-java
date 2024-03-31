@@ -39,4 +39,12 @@ public class ProcessFiles {
                 root.getAbsolutePath(), ".*\\." + ext))
             strategy.process(file.getCanonicalFile());
     }
+
+    public static void main(String[] args) {
+        new ProcessFiles(new ProcessFiles.Strategy() {
+            public void process(File file) {
+                System.out.println(file);
+            }
+        }, "java").start(args);
+    }
 }

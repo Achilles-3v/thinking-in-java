@@ -15,4 +15,8 @@ public class BufferedInputFile {
         in.close();
         return sb.toString();
     }
+    public static void main(String[] args)
+            throws IOException {
+        System.out.print(read("BufferedInputFile.java"));
+    }
 }

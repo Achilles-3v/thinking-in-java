@@ -4,6 +4,7 @@ out/
 
 *.iml
 *.temp
+*.tmp
 *.csv
 *.dat
 *.txt

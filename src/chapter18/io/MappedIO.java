@@ -95,4 +95,8 @@ public class MappedIO {
                 }
             }
     };
+    public static void main(String[] args) {
+        for(Tester test : tests)
+            test.runTest();
+    }
 }

@@ -25,5 +25,29 @@ public class ZipCompress {
             in.close();
             out.flush();
         }
+        out.close();
+        System.out.println("Checksum: " + csum.getChecksum().getValue());
+        System.out.println("Reading file");
+        FileInputStream fi = new FileInputStream("test.zip");
+        CheckedInputStream csumi =
+                new CheckedInputStream(fi, new Adler32());
+        ZipInputStream in2 = new ZipInputStream(csumi);
+        BufferedInputStream bis = new BufferedInputStream(in2);
+        ZipEntry ze;
+        while((ze = in2.getNextEntry()) != null) {
+            System.out.println("Reading file " + ze);
+            int x;
+            while((x = bis.read()) != -1)
+                System.out.write(x);
+        }
+        if(args.length == 1)
+            System.out.println("Checksum: " + csumi.getChecksum().getValue());
+        bis.close();
+        ZipFile zf = new ZipFile("test.zip");
+        Enumeration e = zf.entries();
+        while(e.hasMoreElements()) {
+            ZipEntry ze2 = (ZipEntry)e.nextElement();
+            System.out.println("File: " + ze2);
+        }
     }
 }

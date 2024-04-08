@@ -26,4 +26,20 @@ public class Blip3 implements Externalizable {
         s = (String)in.readObject();
         i = in.readInt();
     }
+    public static void main(String[] args)
+            throws IOException, ClassNotFoundException {
+        System.out.println("Constructing objects:");
+        Blip3 b3 = new Blip3("A String ", 47);
+        System.out.println(b3);
+        ObjectOutputStream o = new ObjectOutputStream(
+                new FileOutputStream("Blip3.out"));
+        System.out.println("Saving object:");
+        o.writeObject(b3);
+        o.close();
+        ObjectInputStream in = new ObjectInputStream(
+                new FileInputStream("Blip3.out"));
+        System.out.println("Recovering b3:");
+        b3 = (Blip3)in.readObject();
+        System.out.println(b3);
+    }
 }

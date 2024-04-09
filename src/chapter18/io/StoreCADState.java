@@ -20,6 +20,17 @@ abstract class Shape implements Serializable {
                 "color[" + getColor() + "] xPos[" + xPos +
                 "] yPos[" + yPos + "] dim[" + dimension + "]\n";
     }
+    public static Shape randomFactory() {
+        int xVal = rand.nextInt(100);
+        int yVal = rand.nextInt(100);
+        int dim = rand.nextInt(100);
+        switch(counter++ % 3) {
+            default:
+            case 0: return new Circle(xVal, yVal, dim);
+            case 1: return new Square(xVal, yVal, dim);
+            case 2: return new Line(xVal, yVal, dim);
+        }
+    }
 }
 
 class Circle extends Shape {

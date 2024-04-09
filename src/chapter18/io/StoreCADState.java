@@ -22,5 +22,39 @@ abstract class Shape implements Serializable {
     }
 }
 
+class Circle extends Shape {
+    private static int color = RED;
+    public Circle(int xVal, int yVal, int dim) {
+        super(xVal, yVal, dim);
+    }
+    public void setColor(int newColor) { color = newColor; }
+    public int getColor() { return color; }
+}
+
+class Square extends Shape {
+    private static int color;
+    public Square(int xVal, int yVal, int dim) {
+        super(xVal, yVal, dim);
+        color = RED;
+    }
+    public void setColor(int newColor) { color = newColor; }
+    public int getColor() { return color; }
+}
+
+class Line extends Shape {
+    private static int color = RED;
+    public static void
+    serializeStaticState(ObjectOutputStream os)
+            throws IOException { os.writeInt(color); }
+    public static void
+    deserializeStaticState(ObjectInputStream os)
+            throws IOException { color = os.readInt(); }
+    public Line(int xVal, int yVal, int dim) {
+        super(xVal, yVal, dim);
+    }
+    public void setColor(int newColor) { color = newColor; }
+    public int getColor() { return color; }
+}
+
 public class StoreCADState {
 }

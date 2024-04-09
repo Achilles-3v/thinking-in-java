@@ -68,4 +68,22 @@ class Line extends Shape {
 }
 
 public class StoreCADState {
+    public static void main(String[] args) throws Exception {
+        List<Class<? extends Shape>> shapeTypes =
+                new ArrayList<Class<? extends Shape>>();
+        shapeTypes.add(Circle.class);
+        shapeTypes.add(Square.class);
+        shapeTypes.add(Line.class);
+        List<Shape> shapes = new ArrayList<Shape>();
+        for(int i = 0; i < 10; i++)
+            shapes.add(Shape.randomFactory());
+        for(int i = 0; i < 10; i++)
+            ((Shape)shapes.get(i)).setColor(Shape.GREEN);
+        ObjectOutputStream out = new ObjectOutputStream(
+                new FileOutputStream("CADState.out"));
+        out.writeObject(shapeTypes);
+        Line.serializeStaticState(out);
+        out.writeObject(shapes);
+        System.out.println(shapes);
+    }
 }

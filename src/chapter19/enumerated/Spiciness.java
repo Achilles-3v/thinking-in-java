@@ -1,4 +1,4 @@
-package chapter19.emumerated;
+package chapter19.enumerated;
 
 public enum Spiciness {
     NOT, MILD, MEDIUM, HOT, FLAMING

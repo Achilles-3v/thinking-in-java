@@ -1,4 +1,4 @@
-package chapter19.emumerated;
+package chapter19.enumerated;
 
 enum Shrubbery { GROUND, CRAWLING, HANGING }
 

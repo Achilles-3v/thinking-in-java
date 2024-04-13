@@ -31,4 +31,13 @@ public enum Meal2 {
     public Food randomSelection() {
         return Enums.random(values);
     }
+    public static void main(String[] args) {
+        for(int i = 0; i < 5; i++) {
+            for(Meal2 meal : Meal2.values()) {
+                Food food = meal.randomSelection();
+                System.out.println(food);
+            }
+            System.out.println("---");
+        }
+    }
 }

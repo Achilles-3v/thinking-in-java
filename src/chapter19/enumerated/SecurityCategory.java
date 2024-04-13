@@ -15,4 +15,12 @@ enum SecurityCategory {
     public Security randomSelection() {
         return Enums.random(values);
     }
+    public static void main(String[] args) {
+        for(int i = 0; i < 10; i++) {
+            SecurityCategory category =
+                    Enums.random(SecurityCategory.class);
+            System.out.println(category + ": " +
+                    category.randomSelection());
+        }
+    }
 }

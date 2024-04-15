@@ -27,4 +27,12 @@ public class CarWash {
         };
         abstract void action();
     }
+    EnumSet<Cycle> cycles =
+            EnumSet.of(Cycle.BASIC, Cycle.RINSE);
+    public void add(Cycle cycle) { cycles.add(cycle); }
+    public void washCar() {
+        for(Cycle c : cycles)
+            c.action();
+    }
+    public String toString() { return cycles.toString(); }
 }

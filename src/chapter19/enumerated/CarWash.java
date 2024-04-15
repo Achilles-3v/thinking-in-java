@@ -35,4 +35,15 @@ public class CarWash {
             c.action();
     }
     public String toString() { return cycles.toString(); }
+    public static void main(String[] args) {
+        CarWash wash = new CarWash();
+        System.out.println(wash);
+        wash.washCar();
+        wash.add(Cycle.BLOWDRY);
+        wash.add(Cycle.BLOWDRY);
+        wash.add(Cycle.RINSE);
+        wash.add(Cycle.HOTWAX);
+        System.out.println(wash);
+        wash.washCar();
+    }
 }

@@ -108,4 +108,11 @@ public class PostOffice {
                 return;
         System.out.println(m + " is a dead letter");
     }
+    public static void main(String[] args) {
+        for(Mail mail : Mail.generator(10)) {
+            System.out.println(mail.details());
+            handle(mail);
+            System.out.println("*****");
+        }
+    }
 }

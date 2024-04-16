@@ -101,6 +101,12 @@ public class VendingMachine {
             state.output();
         }
     }
+    public static void main(String[] args) {
+        Generator<Input> gen = new RandomInputGenerator();
+        if(args.length == 1)
+            gen = new FileInputGenerator(args[0]);
+        run(gen);
+    }
 }
 
 class RandomInputGenerator implements Generator<Input> {

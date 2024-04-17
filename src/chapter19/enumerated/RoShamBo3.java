@@ -34,4 +34,7 @@ public enum RoShamBo3 implements Competitor<RoShamBo3> {
         }
     };
     public abstract Outcome compete(RoShamBo3 it);
+    public static void main(String[] args) {
+        RoShamBo.play(RoShamBo3.class, 20);
+    }
 }

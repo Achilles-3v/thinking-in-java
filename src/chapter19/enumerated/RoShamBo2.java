@@ -20,4 +20,7 @@ public enum RoShamBo2 implements Competitor<RoShamBo2> {
             case ROCK: return vROCK;
         }
     }
+    public static void main(String[] args) {
+        RoShamBo.play(RoShamBo2.class, 20);
+    }
 }

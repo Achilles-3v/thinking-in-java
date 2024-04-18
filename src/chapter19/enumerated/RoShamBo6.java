@@ -12,4 +12,7 @@ enum RoShamBo6 implements Competitor<RoShamBo6> {
     public Outcome compete(RoShamBo6 other) {
         return table[this.ordinal()][other.ordinal()];
     }
+    public static void main(String[] args) {
+        RoShamBo.play(RoShamBo6.class, 20);
+    }
 }

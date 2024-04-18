@@ -27,4 +27,7 @@ enum RoShamBo5 implements Competitor<RoShamBo5> {
     public Outcome compete(RoShamBo5 it) {
         return table.get(this).get(it);
     }
+    public static void main(String[] args) {
+        RoShamBo.play(RoShamBo5.class, 20);
+    }
 }

@@ -9,4 +9,8 @@ public class Multiplier {
         return total;
     }
     private int add(int x, int y) { return x + y; }
+    public static void main(String[] args) {
+        Multiplier m = new Multiplier();
+        System.out.println("11*16 = " + m.multiply(11, 16));
+    }
 }

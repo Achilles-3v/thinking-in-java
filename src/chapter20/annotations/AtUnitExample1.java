@@ -18,4 +18,8 @@ public class AtUnitExample1 {
     @Test private boolean m3() { return true; }
     @Test boolean failureTest() { return false; }
     @Test boolean anotherDisappointment() { return false; }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.mindview.atunit.AtUnit AtUnitExample1");
+    }
 }

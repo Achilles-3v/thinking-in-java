@@ -20,6 +20,6 @@ public class AtUnitExample1 {
     @Test boolean anotherDisappointment() { return false; }
     public static void main(String[] args) throws Exception {
         OSExecute.command(
-                "java net.mindview.atunit.AtUnit AtUnitExample1");
+                "java net.achilles.atunit.AtUnit AtUnitExample1");
     }
 }

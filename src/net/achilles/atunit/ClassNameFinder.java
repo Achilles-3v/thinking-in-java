@@ -63,4 +63,12 @@ public class ClassNameFinder {
             throw new RuntimeException(e);
         }
     }
+    public static void main(String[] args) throws Exception {
+        if(args.length > 0) {
+            for(String arg : args)
+                System.out.println(thisClass(BinaryFile.read(new File(arg))));
+        } else
+            for(File klass : Directory.walk(".", ".*\\.class"))
+                System.out.println(thisClass(BinaryFile.read(klass)));
+    }
 }

@@ -26,4 +26,8 @@ public class AtUnitExample2 {
         assert methodTwo() == 2: "methodTwo must equal 2";
         return methodOne().equals("This is methodOne");
     }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.achilles.atunit.AtUnit AtUnitExample2");
+    }
 }

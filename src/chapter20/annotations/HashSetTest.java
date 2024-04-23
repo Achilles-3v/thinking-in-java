@@ -18,4 +18,8 @@ public class HashSetTest {
         testObject.remove("one");
         assert testObject.isEmpty();
     }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.achilles.atunit.AtUnit HashSetTest");
+    }
 }

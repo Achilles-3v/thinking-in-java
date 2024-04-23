@@ -12,4 +12,8 @@ public class AtUnitComposition {
     @Test boolean _methodTwo() {
         return testObject.methodTwo() == 2;
     }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.achilles.atunit.AtUnit AtUnitComposition");
+    }
 }

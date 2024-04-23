@@ -22,4 +22,8 @@ public class AtUnitExample3 {
         return methodOne().equals("This is methodOne");
     }
     @Test boolean m2() { return methodTwo() == 2; }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.achilles.atunit.AtUnit AtUnitExample3");
+    }
 }

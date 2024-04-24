@@ -36,4 +36,8 @@ public class AtUnitExample5 {
         output.print("test3");
         return true;
     }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.mindview.atunit.AtUnit AtUnitExample5");
+    }
 }

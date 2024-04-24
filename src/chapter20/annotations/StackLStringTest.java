@@ -22,4 +22,8 @@ public class StackLStringTest extends StackL<String> {
         assert top().equals("B");
         assert top().equals("B");
     }
+    public static void main(String[] args) throws Exception {
+        OSExecute.command(
+                "java net.achilles.atunit.AtUnit StackLStringTest");
+    }
 }

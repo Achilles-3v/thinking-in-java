@@ -50,4 +50,9 @@ public class AtUnitExample4 {
         System.out.println(scrambled);
         return scrambled.equals("tsaeborornussu");
     }
+    public static void main(String[] args) throws Exception {
+        System.out.println("starting");
+        OSExecute.command(
+                "java net.achilles.atunit.AtUnit AtUnitExample4");
+    }
 }

@@ -1,4 +1,4 @@
-package chapter21.multithreading;
+package chapter21.concurrency;
 
 public class Ex1 {
     public static void main(String[] args) {

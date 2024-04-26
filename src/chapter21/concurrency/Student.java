@@ -1,4 +1,4 @@
-package chapter21.multithreading;
+package chapter21.concurrency;
 
 /**
  * Пример многопоточности Java

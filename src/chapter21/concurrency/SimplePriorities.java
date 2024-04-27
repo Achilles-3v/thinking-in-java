@@ -24,4 +24,13 @@ public class SimplePriorities implements Runnable {
             if(--countDown == 0) return;
         }
     }
+    public static void main(String[] args) {
+        ExecutorService exec = Executors.newCachedThreadPool();
+        for(int i = 0; i < 5; i++)
+            exec.execute(
+                    new SimplePriorities(Thread.MIN_PRIORITY));
+        exec.execute(
+                new SimplePriorities(Thread.MAX_PRIORITY));
+        exec.shutdown();
+    }
 }

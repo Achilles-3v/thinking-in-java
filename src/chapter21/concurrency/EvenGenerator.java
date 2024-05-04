@@ -7,4 +7,7 @@ public class EvenGenerator extends IntGenerator {
         ++currentEvenValue;
         return currentEvenValue;
     }
+    public static void main(String[] args) {
+        EvenChecker.test(new EvenGenerator());
+    }
 }

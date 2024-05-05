@@ -16,4 +16,7 @@ public class MutexEvenGenerator extends IntGenerator {
             lock.unlock();
         }
     }
+    public static void main(String[] args) {
+        EvenChecker.test(new MutexEvenGenerator());
+    }
 }

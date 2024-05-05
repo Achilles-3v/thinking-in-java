@@ -29,4 +29,19 @@ public class AttemptLocking {
                 lock.unlock();
         }
     }
+    public static void main(String[] args) {
+        final AttemptLocking al = new AttemptLocking();
+        al.untimed();
+        al.timed();
+        new Thread() {
+            { setDaemon(true); }
+            public void run() {
+                al.lock.lock();
+                System.out.println("acquired");
+            }
+        }.start();
+        Thread.yield();
+        al.untimed();
+        al.timed();
+    }
 }

@@ -42,4 +42,13 @@ public class SerialNumberChecker {
             }
         }
     }
+    public static void main(String[] args) throws Exception {
+        for(int i = 0; i < SIZE; i++)
+            exec.execute(new SerialChecker());
+        if(args.length > 0) {
+            TimeUnit.SECONDS.sleep(new Integer(args[0]));
+            System.out.println("No duplicates detected");
+            System.exit(0);
+        }
+    }
 }

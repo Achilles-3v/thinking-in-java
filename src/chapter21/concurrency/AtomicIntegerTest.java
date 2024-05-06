@@ -12,4 +12,22 @@ public class AtomicIntegerTest implements Runnable {
         while(true)
             evenIncrement();
     }
+    public static void main(String[] args) {
+        new Timer().schedule(new TimerTask() {
+            public void run() {
+                System.err.println("Aborting");
+                System.exit(0);
+            }
+        }, 5000);
+        ExecutorService exec = Executors.newCachedThreadPool();
+        AtomicIntegerTest ait = new AtomicIntegerTest();
+        exec.execute(ait);
+        while(true) {
+            int val = ait.getValue();
+            if(val % 2 != 0) {
+                System.out.println(val);
+                System.exit(0);
+            }
+        }
+    }
 }

@@ -8,4 +8,7 @@ public class AtomicEvenGenerator extends IntGenerator {
     public int next() {
         return currentEvenValue.addAndGet(2);
     }
+    public static void main(String[] args) {
+        EvenChecker.test(new AtomicEvenGenerator());
+    }
 }

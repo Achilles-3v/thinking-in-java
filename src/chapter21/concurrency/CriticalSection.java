@@ -47,5 +47,25 @@ abstract class PairManager {
     public abstract void increment();
 }
 
+class PairManager1 extends PairManager {
+    public synchronized void increment() {
+        p.incrementX();
+        p.incrementY();
+        store(getPair());
+    }
+}
+
+class PairManager2 extends PairManager {
+    public void increment() {
+        Pair temp;
+        synchronized(this) {
+            p.incrementX();
+            p.incrementY();
+            temp = getPair();
+        }
+        store(temp);
+    }
+}
+
 public class CriticalSection {
 }

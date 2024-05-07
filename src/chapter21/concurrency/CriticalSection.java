@@ -117,4 +117,10 @@ public class CriticalSection {
         System.out.println("pm1: " + pm1 + "\npm2: " + pm2);
         System.exit(0);
     }
+    public static void main(String[] args) {
+        PairManager
+                pman1 = new PairManager1(),
+                pman2 = new PairManager2();
+        testApproaches(pman1, pman2);
+    }
 }

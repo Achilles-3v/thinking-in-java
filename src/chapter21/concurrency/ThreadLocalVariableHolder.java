@@ -3,6 +3,22 @@ package chapter21.concurrency;
 import java.util.concurrent.*;
 import java.util.*;
 
+class Accessor implements Runnable {
+    private final int id;
+    public Accessor(int idn) { id = idn; }
+    public void run() {
+        while(!Thread.currentThread().isInterrupted()) {
+            ThreadLocalVariableHolder.increment();
+            System.out.println(this);
+            Thread.yield();
+        }
+    }
+    public String toString() {
+        return "#" + id + ": " +
+                ThreadLocalVariableHolder.get();
+    }
+}
+
 public class ThreadLocalVariableHolder {
     private static ThreadLocal<Integer> value =
             new ThreadLocal<Integer>() {

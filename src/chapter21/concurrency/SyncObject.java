@@ -8,6 +8,14 @@ class DualSynch {
             Thread.yield();
         }
     }
+    public void g() {
+        synchronized(syncObject) {
+            for(int i = 0; i < 5; i++) {
+                System.out.println("g()");
+                Thread.yield();
+            }
+        }
+    }
 }
 
 public class SyncObject {

@@ -31,4 +31,11 @@ public class ThreadLocalVariableHolder {
         value.set(value.get() + 1);
     }
     public static int get() { return value.get(); }
+    public static void main(String[] args) throws Exception {
+        ExecutorService exec = Executors.newCachedThreadPool();
+        for(int i = 0; i < 5; i++)
+            exec.execute(new Accessor(i));
+        TimeUnit.SECONDS.sleep(3);
+        exec.shutdownNow();
+    }
 }

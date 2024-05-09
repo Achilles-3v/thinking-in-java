@@ -52,4 +52,13 @@ class SynchronizedBlocked implements Runnable {
 }
 
 public class Interrupting {
+    private static ExecutorService exec =
+            Executors.newCachedThreadPool();
+    static void test(Runnable r) throws InterruptedException{
+        Future<?> f = exec.submit(r);
+        TimeUnit.MILLISECONDS.sleep(100);
+        System.out.println("Interrupting " + r.getClass().getName());
+        f.cancel(true);
+        System.out.println("Interrupt sent to " + r.getClass().getName());
+    }
 }

@@ -22,5 +22,10 @@ class Task implements Runnable {
     public void run() { blocker.waitingCall(); }
 }
 
+class Task2 implements Runnable {
+    static Blocker blocker = new Blocker();
+    public void run() { blocker.waitingCall(); }
+}
+
 public class NotifyVsNotifyAll {
 }

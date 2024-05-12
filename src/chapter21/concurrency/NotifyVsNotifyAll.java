@@ -17,5 +17,10 @@ class Blocker {
     synchronized void prodAll() { notifyAll(); }
 }
 
+class Task implements Runnable {
+    static Blocker blocker = new Blocker();
+    public void run() { blocker.waitingCall(); }
+}
+
 public class NotifyVsNotifyAll {
 }

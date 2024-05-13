@@ -67,4 +67,7 @@ public class Restaurant {
         exec.execute(chef);
         exec.execute(waitPerson);
     }
+    public static void main(String[] args) {
+        new Restaurant();
+    }
 }

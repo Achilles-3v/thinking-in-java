@@ -53,4 +53,12 @@ public class TestBlockingQueues {
         t.interrupt();
         System.out.println("Finished " + msg + " test");
     }
+    public static void main(String[] args) {
+        test("LinkedBlockingQueue", 
+                new LinkedBlockingQueue<LiftOff>());
+        test("ArrayBlockingQueue",
+                new ArrayBlockingQueue<LiftOff>(3));
+        test("SynchronousQueue",
+                new SynchronousQueue<LiftOff>());
+    }
 }

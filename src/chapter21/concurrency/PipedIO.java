@@ -40,4 +40,13 @@ class Receiver implements Runnable {
 }
 
 public class PipedIO {
+    public static void main(String[] args) throws Exception {
+        Sender sender = new Sender();
+        Receiver receiver = new Receiver(sender);
+        ExecutorService exec = Executors.newCachedThreadPool();
+        exec.execute(sender);
+        exec.execute(receiver);
+        TimeUnit.SECONDS.sleep(4);
+        exec.shutdownNow();
+    }
 }

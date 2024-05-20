@@ -74,5 +74,20 @@ class Assembler implements Runnable {
     }
 }
 
+class Reporter implements Runnable {
+    private CarQueue carQueue;
+    public Reporter(CarQueue cq) { carQueue = cq; }
+    public void run() {
+        try {
+            while(!Thread.interrupted()) {
+                System.out.println(carQueue.take());
+            }
+        } catch(InterruptedException e) {
+            System.out.println("Exiting Reporter via interrupt");
+        }
+        System.out.println("Reporter off");
+    }
+}
+
 public class CarBuilder {
 }

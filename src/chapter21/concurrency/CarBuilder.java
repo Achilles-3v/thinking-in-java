@@ -129,5 +129,29 @@ abstract class Robot implements Runnable {
     public String toString() { return getClass().getName(); }
 }
 
+class EngineRobot extends Robot {
+    public EngineRobot(RobotPool pool) { super(pool); }
+    protected void performService() {
+        System.out.println(this + " installing engine");
+        assembler.car().addEngine();
+    }
+}
+
+class DriveTrainRobot extends Robot {
+    public DriveTrainRobot(RobotPool pool) { super(pool); }
+    protected void performService() {
+        System.out.println(this + " installing DriveTrain");
+        assembler.car().addDriveTrain();
+    }
+}
+
+class WheelRobot extends Robot {
+    public WheelRobot(RobotPool pool) { super(pool); }
+    protected void performService() {
+        System.out.println(this + " installing Wheels");
+        assembler.car().addWheels();
+    }
+}
+
 public class CarBuilder {
 }

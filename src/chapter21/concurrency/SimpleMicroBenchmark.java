@@ -24,4 +24,10 @@ class LockingTest extends Incrementable {
 }
 
 public class SimpleMicroBenchmark {
+    static long test(Incrementable incr) {
+        long start = System.nanoTime();
+        for(long i = 0; i < 10000000L; i++)
+            incr.increment();
+        return System.nanoTime() - start;
+    }
 }

@@ -69,5 +69,14 @@ abstract class Accumulator {
     }
 }
 
+class BaseLine extends Accumulator {
+    { id = "BaseLine"; }
+    public void accumulate() {
+        value += preLoaded[index++];
+        if(index >= SIZE) index = 0;
+    }
+    public long read() { return value; }
+}
+
 public class SynchronizationComparisons {
 }

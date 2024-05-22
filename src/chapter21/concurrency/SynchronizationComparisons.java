@@ -125,4 +125,22 @@ class AtomicTest extends Accumulator {
 }
 
 public class SynchronizationComparisons {
+    static BaseLine baseLine = new BaseLine();
+    static SynchronizedTest synch = new SynchronizedTest();
+    static LockTest lock = new LockTest();
+    static AtomicTest atomic = new AtomicTest();
+    static void test() {
+        System.out.println("============================");
+        System.out.printf("%-12s : %13d\n", "Cycles", Accumulator.cycles);
+        baseLine.timedTest();
+        synch.timedTest();
+        lock.timedTest();
+        atomic.timedTest();
+        Accumulator.report(synch, baseLine);
+        Accumulator.report(lock, baseLine);
+        Accumulator.report(atomic, baseLine);
+        Accumulator.report(synch, lock);
+        Accumulator.report(synch, atomic);
+        Accumulator.report(lock, atomic);
+    }
 }

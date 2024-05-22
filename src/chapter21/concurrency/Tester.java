@@ -1,0 +1,35 @@
+package chapter21.concurrency;
+
+import java.util.concurrent.*;
+import net.achilles.util.*;
+
+public abstract class Tester<C> {
+    static int testReps = 10;
+    static int testCycles = 1000;
+    static int containerSize = 1000;
+    abstract C containerInitializer();
+    abstract void startReadersAndWriters();
+    C testContainer;
+    String testId;
+    int nReaders;
+    int nWriters;
+    volatile long readResult = 0;
+    volatile long readTime = 0;
+    volatile long writeTime = 0;
+    CountDownLatch endLatch;
+    static ExecutorService exec =
+            Executors.newCachedThreadPool();
+    Integer[] writeData;
+    Tester(String testId, int nReaders, int nWriters) {
+        this.testId = testId + " " +
+                nReaders + "r " + nWriters + "w";
+        this.nReaders = nReaders;
+        this.nWriters = nWriters;
+        writeData = Generated.array(Integer.class,
+                new RandomGenerator.Integer(), containerSize);
+        for(int i = 0; i < testReps; i++) {
+            readTime = 0;
+            writeTime = 0;
+        }
+    }
+}

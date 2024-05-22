@@ -143,4 +143,16 @@ public class SynchronizationComparisons {
         Accumulator.report(synch, atomic);
         Accumulator.report(lock, atomic);
     }
+    public static void main(String[] args) {
+        int iterations = 5;
+        if(args.length > 0)
+            iterations = new Integer(args[0]);
+        System.out.println("Warmup");
+        baseLine.timedTest();
+        for(int i = 0; i < iterations; i++) {
+            test();
+            Accumulator.cycles *= 2;
+        }
+        Accumulator.exec.shutdown();
+    }
 }

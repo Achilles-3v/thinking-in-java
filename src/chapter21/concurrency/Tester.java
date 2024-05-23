@@ -48,4 +48,18 @@ public abstract class Tester<C> {
             System.out.printf("%-27s %14d\n",
                     "readTime + writeTime =", readTime + writeTime);
     }
+    abstract class TestTask implements Runnable {
+        abstract void test();
+        abstract void putResults();
+        long duration;
+        public void run() {
+            long startTime = System.nanoTime();
+            test();
+            duration = System.nanoTime() - startTime;
+            synchronized(Tester.this) {
+                putResults();
+            }
+            endLatch.countDown();
+        }
+    }
 }

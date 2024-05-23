@@ -49,5 +49,15 @@ class SynchronizedArrayListTest extends ListTest {
     }
 }
 
+class CopyOnWriteArrayListTest extends ListTest {
+    List<Integer> containerInitializer() {
+        return new CopyOnWriteArrayList<Integer>(
+                new CountingIntegerList(containerSize));
+    }
+    CopyOnWriteArrayListTest(int nReaders, int nWriters) {
+        super("CopyOnWriteArrayList", nReaders, nWriters);
+    }
+}
+
 public class ListComparisons {
 }

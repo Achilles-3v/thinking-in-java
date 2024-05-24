@@ -53,4 +53,17 @@ class ReaderWriterListTest {
             exec.shutdownNow();
         }
     }
+    private class Reader implements Runnable {
+        public void run() {
+            try {
+                while(!Thread.interrupted()) {
+                    for(int i = 0; i < SIZE; i++) {
+                        list.get(i);
+                        TimeUnit.MILLISECONDS.sleep(1);
+                    }
+                }
+            } catch(InterruptedException e) {
+            }
+        }
+    }
 }

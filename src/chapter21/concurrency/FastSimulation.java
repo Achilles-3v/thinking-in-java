@@ -32,4 +32,14 @@ public class FastSimulation {
             }
         }
     }
+    public static void main(String[] args) throws Exception {
+        ExecutorService exec = Executors.newCachedThreadPool();
+        for(int i = 0; i < N_ELEMENTS; i++)
+            for(int j = 0; j < N_GENES; j++)
+                GRID[i][j] = new AtomicInteger(rand.nextInt(1000));
+        for(int i = 0; i < N_EVOLVERS; i++)
+            exec.execute(new Evolver());
+        TimeUnit.SECONDS.sleep(5);
+        exec.shutdownNow();
+    }
 }

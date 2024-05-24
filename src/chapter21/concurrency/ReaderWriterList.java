@@ -34,3 +34,23 @@ public class ReaderWriterList<T> {
     }
 }
 
+class ReaderWriterListTest {
+    ExecutorService exec = Executors.newCachedThreadPool();
+    private final static int SIZE = 100;
+    private static Random rand = new Random(47);
+    private ReaderWriterList<Integer> list =
+            new ReaderWriterList<Integer>(SIZE, 0);
+    private class Writer implements Runnable {
+        public void run() {
+            try {
+                for(int i = 0; i < 20; i++) {
+                    list.set(i, rand.nextInt());
+                    TimeUnit.MILLISECONDS.sleep(100);
+                }
+            } catch(InterruptedException e) {
+            }
+            System.out.println("Writer finished, shutting down");
+            exec.shutdownNow();
+        }
+    }
+}

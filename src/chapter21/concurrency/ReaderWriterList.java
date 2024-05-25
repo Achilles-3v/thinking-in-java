@@ -32,6 +32,9 @@ public class ReaderWriterList<T> {
             rlock.unlock();
         }
     }
+    public static void main(String[] args) throws Exception {
+        new ReaderWriterListTest(30, 1);
+    }
 }
 
 class ReaderWriterListTest {

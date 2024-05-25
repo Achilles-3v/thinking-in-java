@@ -15,4 +15,14 @@ public class ActiveObjectDemo {
             System.out.println("sleep() interrupted");
         }
     }
+    public Future<Integer>
+    calculateInt(final int x, final int y) {
+        return ex.submit(new Callable<Integer>() {
+            public Integer call() {
+                System.out.println("starting " + x + " + " + y);
+                pause(500);
+                return x + y;
+            }
+        });
+    }
 }

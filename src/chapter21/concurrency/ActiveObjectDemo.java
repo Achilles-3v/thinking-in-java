@@ -25,4 +25,15 @@ public class ActiveObjectDemo {
             }
         });
     }
+    public Future<Float>
+    calculateFloat(final float x, final float y) {
+        return ex.submit(new Callable<Float>() {
+            public Float call() {
+                System.out.println("starting " + x + " + " + y);
+                pause(2000);
+                return x + y;
+            }
+        });
+    }
+    public void shutdown() { ex.shutdown(); }
 }

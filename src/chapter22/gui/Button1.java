@@ -13,4 +13,7 @@ public class Button1 extends JFrame {
         add(b1);
         add(b2);
     }
+    public static void main(String[] args) {
+        run(new Button1(), 200, 100);
+    }
 }

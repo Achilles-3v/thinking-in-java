@@ -25,4 +25,7 @@ public class Button2 extends JFrame {
         add(b2);
         add(txt);
     }
+    public static void main(String[] args) {
+        run(new Button2(), 200, 150);
+    }
 }

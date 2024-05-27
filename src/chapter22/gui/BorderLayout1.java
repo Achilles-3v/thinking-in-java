@@ -12,4 +12,7 @@ public class BorderLayout1 extends JFrame {
         add(BorderLayout.WEST, new JButton("West"));
         add(BorderLayout.CENTER, new JButton("Center"));
     }
+    public static void main(String[] args) {
+        run(new BorderLayout1(), 300, 250);
+    }
 }

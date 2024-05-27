@@ -32,4 +32,7 @@ public class TextArea extends JFrame {
         add(b);
         add(c);
     }
+    public static void main(String[] args) {
+        run(new TextArea(), 475, 425);
+    }
 }

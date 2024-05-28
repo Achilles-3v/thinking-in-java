@@ -10,4 +10,7 @@ public class GridLayout1 extends JFrame {
         for(int i = 0; i < 20; i++)
             add(new JButton("Button " + i));
     }
+    public static void main(String[] args) {
+        run(new GridLayout1(), 300, 300);
+    }
 }

@@ -39,4 +39,16 @@ public class ShowAddListeners extends JFrame {
             }
         }
     }
+    public ShowAddListeners() {
+        NameL nameListener = new NameL();
+        name.addActionListener(nameListener);
+        JPanel top = new JPanel();
+        top.add(new JLabel("Swing class name (press Enter):"));
+        top.add(name);
+        add(BorderLayout.NORTH, top);
+        add(new JScrollPane(results));
+        name.setText("JTextArea");
+        nameListener.actionPerformed(
+                new ActionEvent("", 0 ,""));
+    }
 }

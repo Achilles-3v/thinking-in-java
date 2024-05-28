@@ -10,4 +10,7 @@ public class FlowLayout1 extends JFrame {
         for(int i = 0; i < 20; i++)
             add(new JButton("Button " + i));
     }
+    public static void main(String[] args) {
+        run(new FlowLayout1(), 300, 300);
+    }
 }

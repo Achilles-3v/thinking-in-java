@@ -14,4 +14,29 @@ public class ShowAddListeners extends JFrame {
             Pattern.compile("(add\\w+?Listener\\(.*?\\))");
     private static Pattern qualifier =
             Pattern.compile("\\w+\\.");
+    class NameL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String nm = name.getText().trim();
+            if(nm.length() == 0) {
+                results.setText("No match");
+                return;
+            }
+            Class<?> kind;
+            try {
+                kind = Class.forName("javax.swing." + nm);
+            } catch(ClassNotFoundException ex) {
+                results.setText("No match");
+                return;
+            }
+            Method[] methods = kind.getMethods();
+            results.setText("");
+            for(Method m : methods) {
+                Matcher matcher =
+                        addListener.matcher(m.toString());
+                if(matcher.find())
+                    results.append(qualifier.matcher(
+                            matcher.group(1)).replaceAll("") + "\n");
+            }
+        }
+    }
 }

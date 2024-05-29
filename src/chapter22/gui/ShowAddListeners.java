@@ -51,4 +51,7 @@ public class ShowAddListeners extends JFrame {
         nameListener.actionPerformed(
                 new ActionEvent("", 0 ,""));
     }
-}
+    public static void main(String[] args) {
+        run(new ShowAddListeners(), 500, 400);
+    }
+} 

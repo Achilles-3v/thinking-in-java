@@ -87,4 +87,7 @@ public class TrackEvent extends JFrame {
         add(b1);
         add(b2);
     }
+    public static void main(String[] args) {
+        run(new TrackEvent(), 700, 500);
+    }
 }

@@ -31,4 +31,11 @@ public class ButtonGroups extends JFrame {
         }
         return jp;
     }
+    public ButtonGroups() {
+        setLayout(new FlowLayout());
+        add(makeBPanel(JButton.class, ids));
+        add(makeBPanel(JToggleButton.class, ids));
+        add(makeBPanel(JCheckBox.class, ids));
+        add(makeBPanel(JRadioButton.class, ids));
+    }
 }

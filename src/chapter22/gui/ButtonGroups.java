@@ -38,4 +38,7 @@ public class ButtonGroups extends JFrame {
         add(makeBPanel(JCheckBox.class, ids));
         add(makeBPanel(JRadioButton.class, ids));
     }
+    public static void main(String[] args) {
+        run(new ButtonGroups(), 500, 350);
+    }
 }

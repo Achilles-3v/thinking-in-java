@@ -27,4 +27,7 @@ public class Buttons extends JFrame {
         jp.add(right);
         add(jp);
     }
+    public static void main(String[] args) {
+        run(new Buttons(), 350, 200);
+    }
 }

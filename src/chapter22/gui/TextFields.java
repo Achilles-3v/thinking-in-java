@@ -33,6 +33,15 @@ public class TextFields extends JFrame {
             t3.setText("t1 Action Event " + count++);
         }
     }
+    class B1 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            if(t1.getSelectedText() == null)
+                s = t1.getText();
+            else
+                s = t1.getSelectedText();
+            t1.setEditable(true);
+        }
+    }
 }
 
 class UpperCaseDocument extends PlainDocument {

@@ -17,6 +17,16 @@ public class TextFields extends JFrame {
             t3 = new JTextField(30);
     private String s = "";
     private UpperCaseDocument ucd = new UpperCaseDocument();
+    class T1 implements DocumentListener {
+        public void changedUpdate(DocumentEvent e) {}
+        public void insertUpdate(DocumentEvent e) {
+            t2.setText(t1.getText());
+            t3.setText("Text: "+ t1.getText());
+        }
+        public void removeUpdate(DocumentEvent e) {
+            t2.setText(t1.getText());
+        }
+    }
 }
 
 class UpperCaseDocument extends PlainDocument {

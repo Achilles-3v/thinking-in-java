@@ -51,4 +51,7 @@ public class Faces extends JFrame {
         });
         add(jb2);
     }
+    public static void main(String[] args) {
+        run(new Faces(), 250, 125);
+    }
 }

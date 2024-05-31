@@ -27,6 +27,12 @@ public class TextFields extends JFrame {
             t2.setText(t1.getText());
         }
     }
+    class T1A implements ActionListener {
+        private int count = 0;
+        public void actionPerformed(ActionEvent e) {
+            t3.setText("t1 Action Event " + count++);
+        }
+    }
 }
 
 class UpperCaseDocument extends PlainDocument {

@@ -42,6 +42,14 @@ public class TextFields extends JFrame {
             t1.setEditable(true);
         }
     }
+    class B2 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            ucd.setUpperCase(false);
+            t1.setText("Inserted by Button 2: " + s);
+            ucd.setUpperCase(true);
+            t1.setEditable(false);
+        }
+    }
 }
 
 class UpperCaseDocument extends PlainDocument {

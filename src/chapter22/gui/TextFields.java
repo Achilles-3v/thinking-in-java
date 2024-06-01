@@ -63,6 +63,9 @@ public class TextFields extends JFrame {
             t1.setEditable(false);
         }
     }
+    public static void main(String[] args) {
+        run(new TextFields(), 375, 200);
+    }
 }
 
 class UpperCaseDocument extends PlainDocument {

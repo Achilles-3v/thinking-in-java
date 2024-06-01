@@ -17,6 +17,19 @@ public class TextFields extends JFrame {
             t3 = new JTextField(30);
     private String s = "";
     private UpperCaseDocument ucd = new UpperCaseDocument();
+    public TextFields() {
+        t1.setDocument(ucd);
+        ucd.addDocumentListener(new T1());
+        b1.addActionListener(new B1());
+        b2.addActionListener(new B2());
+        t1.addActionListener(new T1A());
+        setLayout(new FlowLayout());
+        add(b1);
+        add(b2);
+        add(t1);
+        add(t2);
+        add(t3);
+    }
     class T1 implements DocumentListener {
         public void changedUpdate(DocumentEvent e) {}
         public void insertUpdate(DocumentEvent e) {

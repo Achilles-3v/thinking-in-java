@@ -31,4 +31,7 @@ public class Borders extends JFrame {
                 new EtchedBorder(),
                 new LineBorder(Color.RED))));
     }
+    public static void main(String[] args) {
+        run(new Borders(), 500, 300);
+    }
 }

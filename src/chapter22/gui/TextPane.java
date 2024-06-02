@@ -21,4 +21,7 @@ public class TextPane extends JFrame {
         add(new JScrollPane(tp));
         add(BorderLayout.SOUTH, b);
     }
+    public static void main(String[] args) {
+        run(new TextPane(), 475, 425);
+    }
 }

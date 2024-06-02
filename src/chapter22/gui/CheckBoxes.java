@@ -39,4 +39,7 @@ public class CheckBoxes extends JFrame {
         else
             t.append("Box " + b + " Cleared\n");
     }
+    public static void main(String[] args) {
+        run(new CheckBoxes(), 200, 300);
+    }
 }

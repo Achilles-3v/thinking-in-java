@@ -11,4 +11,10 @@ public class CheckBoxes extends JFrame {
             cb1 = new JCheckBox("Check Box 1"),
             cb2 = new JCheckBox("Check Box 2"),
             cb3 = new JCheckBox("Check Box 3");
+    private void trace(String b, JCheckBox cb) {
+        if(cb.isSelected())
+            t.append("Box " + b + " Set\n");
+        else
+            t.append("Box " + b + " Cleared\n");
+    }
 }

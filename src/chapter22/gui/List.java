@@ -37,4 +37,19 @@ public class List extends JFrame {
                 }
             };
     private int count = 0;
+    public List() {
+        t.setEditable(false);
+        setLayout(new FlowLayout());
+        Border brd = BorderFactory.createMatteBorder(
+                1, 1, 2, 2, Color.BLACK);
+        lst.setBorder(brd);
+        t.setBorder(brd);
+        for(int i = 0; i < 4; i++)
+            lItems.addElement(flavors[count++]);
+        add(t);
+        add(lst);
+        add(b);
+        lst.addListSelectionListener(ll);
+        b.addActionListener(bl);
+    }
 }

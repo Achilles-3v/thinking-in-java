@@ -35,4 +35,7 @@ public class ComboBoxes extends JFrame {
         add(c);
         add(b);
     }
+    public static void main(String[] args) {
+        run(new ComboBoxes(), 200, 175);
+    }
 }

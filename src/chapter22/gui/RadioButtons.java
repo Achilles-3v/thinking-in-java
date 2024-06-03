@@ -30,4 +30,7 @@ public class RadioButtons extends JFrame {
         add(rb2);
         add(rb3);
     }
+    public static void main(String[] args) {
+        run(new RadioButtons(), 200, 125);
+    }
 }

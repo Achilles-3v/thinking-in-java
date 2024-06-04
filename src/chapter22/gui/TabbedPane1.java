@@ -13,4 +13,18 @@ public class TabbedPane1 extends JFrame {
     };
     private JTabbedPane tabs = new JTabbedPane();
     private JTextField txt = new JTextField(20);
+    public TabbedPane1() {
+        int i = 0;
+        for(String flavor : flavors)
+            tabs.addTab(flavors[i],
+                    new JButton("Tabbed pane " + i++));
+        tabs.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                txt.setText("Tab selected: " +
+                        tabs.getSelectedIndex());
+            }
+        });
+        add(BorderLayout.SOUTH, txt);
+        add(tabs);
+    }
 }

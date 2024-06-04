@@ -52,4 +52,7 @@ public class List extends JFrame {
         lst.addListSelectionListener(ll);
         b.addActionListener(bl);
     }
+    public static void main(String[] args) {
+        run(new List(), 250, 375);
+    }
 }

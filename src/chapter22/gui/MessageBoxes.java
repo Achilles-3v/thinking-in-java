@@ -47,4 +47,12 @@ public class MessageBoxes extends JFrame {
             }
         }
     };
+    public MessageBoxes() {
+        setLayout(new FlowLayout());
+        for(int i = 0; i < b.length; i++) {
+            b[i].addActionListener(al);
+            add(b[i]);
+        }
+        add(txt);
+    }
 }

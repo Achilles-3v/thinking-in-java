@@ -27,4 +27,7 @@ public class TabbedPane1 extends JFrame {
         add(BorderLayout.SOUTH, txt);
         add(tabs);
     }
+    public static void main(String[] args) {
+        run(new TabbedPane1(), 400, 250);
+    }
 }

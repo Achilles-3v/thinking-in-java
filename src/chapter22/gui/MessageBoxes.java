@@ -55,4 +55,7 @@ public class MessageBoxes extends JFrame {
         }
         add(txt);
     }
-}
+    public static void main(String[] args) {
+        run(new MessageBoxes(), 200, 200);
+    }
+} 

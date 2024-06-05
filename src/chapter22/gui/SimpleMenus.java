@@ -16,4 +16,11 @@ public class SimpleMenus extends JFrame {
             new JMenu("Winken"), new JMenu("Blinken"),
             new JMenu("Nod")
     };
+    private JMenuItem[] items = {
+            new JMenuItem("Fee"), new JMenuItem("Fi"),
+            new JMenuItem("Fo"),  new JMenuItem("Zip"),
+            new JMenuItem("Zap"), new JMenuItem("Zot"),
+            new JMenuItem("Olly"), new JMenuItem("Oxen"),
+            new JMenuItem("Free")
+    };
 }

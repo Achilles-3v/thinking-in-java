@@ -35,4 +35,7 @@ public class SimpleMenus extends JFrame {
         setLayout(new FlowLayout());
         add(t);
     }
+    public static void main(String[] args) {
+        run(new SimpleMenus(), 200, 150);
+    }
 }

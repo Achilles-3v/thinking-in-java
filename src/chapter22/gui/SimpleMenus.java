@@ -23,4 +23,16 @@ public class SimpleMenus extends JFrame {
             new JMenuItem("Olly"), new JMenuItem("Oxen"),
             new JMenuItem("Free")
     };
+    public SimpleMenus() {
+        for(int i = 0; i < items.length; i++) {
+            items[i].addActionListener(al);
+            menus[i % 3].add(items[i]);
+        }
+        JMenuBar mb = new JMenuBar();
+        for(JMenu jm : menus)
+            mb.add(jm);
+        setJMenuBar(mb);
+        setLayout(new FlowLayout());
+        add(t);
+    }
 }

@@ -12,4 +12,8 @@ public class SimpleMenus extends JFrame {
             t.setText(((JMenuItem)e.getSource()).getText());
         }
     };
+    private JMenu[] menus = {
+            new JMenu("Winken"), new JMenu("Blinken"),
+            new JMenu("Nod")
+    };
 }

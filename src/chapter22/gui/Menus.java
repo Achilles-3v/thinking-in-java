@@ -131,4 +131,7 @@ public class Menus extends JFrame {
         fooBar.setMnemonic(KeyEvent.VK_B);
         mb2.add(fooBar);
     }
+    public static void main(String[] args) {
+        run(new Menus(), 300, 200);
+    }
 }

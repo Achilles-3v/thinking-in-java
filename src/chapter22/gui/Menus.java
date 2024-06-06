@@ -37,4 +37,21 @@ public class Menus extends JFrame {
             validate(); // Refresh the frame
         }
     }
+    class ML implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JMenuItem target = (JMenuItem)e.getSource();
+            String actionCommand = target.getActionCommand();
+            if(actionCommand.equals("Open")) {
+                String s = t.getText();
+                boolean chosen = false;
+                for(String flavor : flavors)
+                    if(s.equals(flavor))
+                        chosen = true;
+                if(!chosen)
+                    t.setText("Choose a flavor first!");
+                else
+                    t.setText("Opening " + s + ". Mmm, mm!");
+            }
+        }
+    }
 }

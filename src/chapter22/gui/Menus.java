@@ -30,4 +30,11 @@ public class Menus extends JFrame {
             new JMenuItem("Baz"),
     };
     private JButton b = new JButton("Swap Menus");
+    class BL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JMenuBar m = getJMenuBar();
+            setJMenuBar(m == mb1 ? mb2 : mb1);
+            validate(); // Refresh the frame
+        }
+    }
 }

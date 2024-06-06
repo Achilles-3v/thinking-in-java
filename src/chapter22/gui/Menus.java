@@ -65,4 +65,14 @@ public class Menus extends JFrame {
             t.setText("Foo selected");
         }
     }
+    class BarL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            t.setText("Bar selected");
+        }
+    }
+    class BazL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            t.setText("Baz selected");
+        }
+    }
 }

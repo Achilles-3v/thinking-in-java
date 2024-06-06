@@ -75,4 +75,17 @@ public class Menus extends JFrame {
             t.setText("Baz selected");
         }
     }
+    class CMIL implements ItemListener {
+        public void itemStateChanged(ItemEvent e) {
+            JCheckBoxMenuItem target =
+                    (JCheckBoxMenuItem)e.getSource();
+            String actionCommand = target.getActionCommand();
+            if(actionCommand.equals("Guard"))
+                t.setText("Guard the Ice Cream! " +
+                        "Guarding is " + target.getState());
+            else if(actionCommand.equals("Hide"))
+                t.setText("Hide the Ice Cream! " +
+                        "Is it hidden? " + target.getState());
+        }
+    }
 }

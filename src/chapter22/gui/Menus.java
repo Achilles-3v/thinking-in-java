@@ -88,4 +88,47 @@ public class Menus extends JFrame {
                         "Is it hidden? " + target.getState());
         }
     }
+    public Menus() {
+        ML ml = new ML();
+        CMIL cmil = new CMIL();
+        safety[0].setActionCommand("Guard");
+        safety[0].setMnemonic(KeyEvent.VK_G);
+        safety[0].addItemListener(cmil);
+        safety[1].setActionCommand("Hide");
+        safety[1].setMnemonic(KeyEvent.VK_H);
+        safety[1].addItemListener(cmil);
+        other[0].addActionListener(new FooL());
+        other[1].addActionListener(new BarL());
+        other[2].addActionListener(new BazL());
+        FL fl = new FL();
+        int n = 0;
+        for(String flavor : flavors) {
+            JMenuItem mi = new JMenuItem(flavor);
+            mi.addActionListener(fl);
+            m.add(mi);
+            if((n++ + 1) % 3 == 0)
+                m.addSeparator();
+        }
+        for(JCheckBoxMenuItem sfty : safety)
+            s.add(sfty);
+        s.setMnemonic(KeyEvent.VK_A);
+        f.add(s);
+        f.setMnemonic(KeyEvent.VK_F);
+        for(int i = 0; i < file.length; i++) {
+            file[i].addActionListener(ml);
+            f.add(file[i]);
+        }
+        mb1.add(f);
+        mb1.add(m);
+        setJMenuBar(mb1);
+        t.setEditable(false);
+        add(t, BorderLayout.CENTER);
+        b.addActionListener(new BL());
+        b.setMnemonic(KeyEvent.VK_S);
+        add(b, BorderLayout.NORTH);
+        for(JMenuItem oth : other)
+            fooBar.add(oth);
+        fooBar.setMnemonic(KeyEvent.VK_B);
+        mb2.add(fooBar);
+    }
 }

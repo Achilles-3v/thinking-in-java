@@ -54,4 +54,15 @@ public class Menus extends JFrame {
             }
         }
     }
+    class FL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JMenuItem target = (JMenuItem)e.getSource();
+            t.setText(target.getText());
+        }
+    }
+    class FooL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            t.setText("Foo selected");
+        }
+    }
 }

@@ -45,4 +45,7 @@ public class Popup extends JFrame {
                 popup.show(e.getComponent(), e.getX(), e.getY());
         }
     }
+    public static void main(String[] args) {
+        run(new Popup(), 300, 200);
+    }
 }

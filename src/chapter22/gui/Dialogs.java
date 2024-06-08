@@ -32,4 +32,7 @@ public class Dialogs extends JFrame {
         });
         add(b1);
     }
+    public static void main(String[] args) {
+        run(new Dialogs(), 125, 75);
+    }
 }

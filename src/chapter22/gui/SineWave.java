@@ -55,4 +55,7 @@ public class SineWave extends JFrame {
         });
         add(BorderLayout.SOUTH, adjustCycles);
     }
+    public static void main(String[] args) {
+        run(new SineWave(), 700, 400);
+    }
 }

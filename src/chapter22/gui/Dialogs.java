@@ -22,4 +22,14 @@ class MyDialog extends JDialog {
 }
 
 public class Dialogs extends JFrame {
+    private JButton b1 = new JButton("Dialog Box");
+    private MyDialog dlg = new MyDialog(null);
+    public Dialogs() {
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dlg.setVisible(true);
+            }
+        });
+        add(b1);
+    }
 }

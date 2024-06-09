@@ -12,6 +12,21 @@ public class FileChooserTest extends JFrame {
     private JButton
             open = new JButton("Open"),
             save = new JButton("Save");
+    public FileChooserTest() {
+        JPanel p = new JPanel();
+        open.addActionListener(new OpenL());
+        p.add(open);
+        save.addActionListener(new SaveL());
+        p.add(save);
+        add(p, BorderLayout.SOUTH);
+        dir.setEditable(false);
+        fileName.setEditable(false);
+        p = new JPanel();
+        p.setLayout(new GridLayout(2,1));
+        p.add(fileName);
+        p.add(dir);
+        add(p, BorderLayout.NORTH);
+    }
     class OpenL implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JFileChooser c = new JFileChooser();

@@ -63,4 +63,16 @@ public class TicTacToe extends JFrame {
             d.setVisible(true);
         }
     }
+    public TicTacToe() {
+        JPanel p = new JPanel();
+        p.setLayout(new GridLayout(2,2));
+        p.add(new JLabel("Rows", JLabel.CENTER));
+        p.add(rows);
+        p.add(new JLabel("Columns", JLabel.CENTER));
+        p.add(cols);
+        add(p, BorderLayout.NORTH);
+        JButton b = new JButton("go");
+        b.addActionListener(new BL());
+        add(b, BorderLayout.SOUTH);
+    }
 }

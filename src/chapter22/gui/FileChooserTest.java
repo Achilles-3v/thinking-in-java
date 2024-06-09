@@ -26,4 +26,18 @@ public class FileChooserTest extends JFrame {
             }
         }
     }
+    class SaveL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JFileChooser c = new JFileChooser();
+            int rVal = c.showSaveDialog(FileChooserTest.this);
+            if(rVal == JFileChooser.APPROVE_OPTION) {
+                fileName.setText(c.getSelectedFile().getName());
+                dir.setText(c.getCurrentDirectory().toString());
+            }
+            if(rVal == JFileChooser.CANCEL_OPTION) {
+                fileName.setText("You pressed cancel");
+                dir.setText("");
+            }
+        }
+    }
 }

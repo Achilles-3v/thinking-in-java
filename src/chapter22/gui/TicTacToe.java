@@ -75,4 +75,7 @@ public class TicTacToe extends JFrame {
         b.addActionListener(new BL());
         add(b, BorderLayout.SOUTH);
     }
+    public static void main(String[] args) {
+        run(new TicTacToe(), 200, 200);
+    }
 }

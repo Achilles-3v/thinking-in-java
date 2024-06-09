@@ -55,4 +55,12 @@ public class TicTacToe extends JFrame {
             }
         }
     }
+    class BL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JDialog d = new ToeDialog(
+                    new Integer(rows.getText()),
+                    new Integer(cols.getText()));
+            d.setVisible(true);
+        }
+    }
 }

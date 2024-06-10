@@ -55,4 +55,7 @@ public class FileChooserTest extends JFrame {
             }
         }
     }
+    public static void main(String[] args) {
+        run(new FileChooserTest(), 250, 150);
+    }
 }

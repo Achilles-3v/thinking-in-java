@@ -9,4 +9,15 @@ public class HTMLButton extends JFrame {
     private JButton b = new JButton(
             "<html><b><font size=+2>" +
                     "<center>Hello!<br><i>Press me now!");
+    public HTMLButton() {
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                add(new JLabel("<html>" +
+                        "<i><font size=+4>Kapow!"));
+                validate();
+            }
+        });
+        setLayout(new FlowLayout());
+        add(b);
+    }
 }

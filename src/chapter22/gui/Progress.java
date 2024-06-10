@@ -30,4 +30,7 @@ public class Progress extends JFrame {
             }
         });
     }
+    public static void main(String[] args) {
+        run(new Progress(), 300, 200);
+    }
 }

@@ -20,4 +20,7 @@ public class HTMLButton extends JFrame {
         setLayout(new FlowLayout());
         add(b);
     }
+    public static void main(String[] args) {
+        run(new HTMLButton(), 200, 500);
+    }
 }

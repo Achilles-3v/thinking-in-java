@@ -16,4 +16,10 @@ public class LookAndFeel extends JFrame {
             new JComboBox(choices),
             new JList(choices),
     };
+    public LookAndFeel() {
+        super("Look And Feel");
+        setLayout(new FlowLayout());
+        for(Component component : samples)
+            add(component);
+    }
 }

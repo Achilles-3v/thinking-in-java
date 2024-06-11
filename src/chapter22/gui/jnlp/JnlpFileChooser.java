@@ -31,4 +31,28 @@ public class JnlpFileChooser extends JFrame {
         ep.setContentType("text");
         save.setEnabled(false);
     }
+    class OpenL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            FileOpenService fs = null;
+            try {
+                fs = (FileOpenService)ServiceManager.lookup(
+                        "javax.jnlp.FileOpenService");
+            } catch(UnavailableServiceException use) {
+                throw new RuntimeException(use);
+            }
+            if(fs != null) {
+                try {
+                    fileContents = fs.openFileDialog(".",
+                            new String[]{"txt", "*"});
+                    if(fileContents == null)
+                        return;
+                    fileName.setText(fileContents.getName());
+                    ep.read(fileContents.getInputStream(), null);
+                } catch(Exception exc) {
+                    throw new RuntimeException(exc);
+                }
+                save.setEnabled(true);
+            }
+        }
+    }
 }

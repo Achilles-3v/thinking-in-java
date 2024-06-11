@@ -22,4 +22,9 @@ public class LookAndFeel extends JFrame {
         for(Component component : samples)
             add(component);
     }
+    private static void usageError() {
+        System.out.println(
+                "Usage:LookAndFeel [cross|system|motif]");
+        System.exit(1);
+    }
 }

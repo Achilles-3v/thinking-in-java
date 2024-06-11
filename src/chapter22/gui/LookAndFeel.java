@@ -27,4 +27,30 @@ public class LookAndFeel extends JFrame {
                 "Usage:LookAndFeel [cross|system|motif]");
         System.exit(1);
     }
+    public static void main(String[] args) {
+        if(args.length == 0) usageError();
+        if(args[0].equals("cross")) {
+            try {
+                UIManager.setLookAndFeel(UIManager.
+                        getCrossPlatformLookAndFeelClassName());
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        } else if(args[0].equals("system")) {
+            try {
+                UIManager.setLookAndFeel(UIManager.
+                        getSystemLookAndFeelClassName());
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        } else if(args[0].equals("motif")) {
+            try {
+                UIManager.setLookAndFeel("com.sun.java."+
+                        "swing.plaf.motif.MotifLookAndFeel");
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        } else usageError();
+        run(new LookAndFeel(), 300, 300);
+    }
 }

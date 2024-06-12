@@ -55,4 +55,29 @@ public class JnlpFileChooser extends JFrame {
             }
         }
     }
+    class SaveL implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            FileSaveService fs = null;
+            try {
+                fs = (FileSaveService)ServiceManager.lookup(
+                        "javax.jnlp.FileSaveService");
+            } catch(UnavailableServiceException use) {
+                throw new RuntimeException(use);
+            }
+            if(fs != null) {
+                try {
+                    fileContents = fs.saveFileDialog(".",
+                            new String[]{"txt"},
+                            new ByteArrayInputStream(
+                                    ep.getText().getBytes()),
+                            fileContents.getName());
+                    if(fileContents == null)
+                        return;
+                    fileName.setText(fileContents.getName());
+                } catch(Exception exc) {
+                    throw new RuntimeException(exc);
+                }
+            }
+        }
+    }
 }

@@ -31,4 +31,7 @@ public class LongRunningTask extends JFrame {
         add(b1);
         add(b2);
     }
+    public static void main(String[] args) {
+        run(new LongRunningTask(), 200, 150);
+    }
 }

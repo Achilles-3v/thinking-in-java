@@ -29,4 +29,21 @@ public class InterruptableLongRunningTask extends JFrame {
             b2 = new JButton("End Long Running Task");
     ExecutorService executor =
             Executors.newSingleThreadExecutor();
+    public InterruptableLongRunningTask() {
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Task task = new Task();
+                executor.execute(task);
+                System.out.println(task + " added to the queue");
+            }
+        });
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                executor.shutdownNow();
+            }
+        });
+        setLayout(new FlowLayout());
+        add(b1);
+        add(b2);
+    }
 }

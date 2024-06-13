@@ -46,4 +46,7 @@ public class InterruptableLongRunningTask extends JFrame {
         add(b1);
         add(b2);
     }
+    public static void main(String[] args) {
+        run(new InterruptableLongRunningTask(), 200, 150);
+    }
 }

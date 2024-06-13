@@ -26,4 +26,17 @@ public class TaskManager<R,C extends Callable<R>>
         }
         return results;
     }
+    public List<String> purge() {
+        Iterator<TaskItem<R,C>> items = iterator();
+        List<String> results = new ArrayList<String>();
+        while(items.hasNext()) {
+            TaskItem<R,C> item = items.next();
+            if(!item.future.isDone()) {
+                results.add("Cancelling " + item.task);
+                item.future.cancel(true);
+                items.remove();
+            }
+        }
+        return results;
+    }
 }

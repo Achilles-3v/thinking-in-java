@@ -50,4 +50,35 @@ public class MonitoredLongRunningCallable extends JFrame {
             b1 = new JButton("Start Long Running Task"),
             b2 = new JButton("End Long Running Task"),
             b3 = new JButton("Get results");
+    private TaskManager<String,MonitoredCallable> manager =
+            new TaskManager<String,MonitoredCallable>();
+    public MonitoredLongRunningCallable() {
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                MonitoredCallable task = new MonitoredCallable(
+                        new ProgressMonitor(
+                                MonitoredLongRunningCallable.this,
+                                "Long-Running Task", "", 0, 0)
+                );
+                manager.add(task);
+                System.out.println(task + " added to the queue");
+            }
+        });
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for(String result : manager.purge())
+                    System.out.println(result);
+            }
+        });
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for(String result : manager.getResults())
+                    System.out.println(result);
+            }
+        });
+        setLayout(new FlowLayout());
+        add(b1);
+        add(b2);
+        add(b3);
+    }
 }

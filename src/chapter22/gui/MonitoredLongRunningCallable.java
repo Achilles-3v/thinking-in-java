@@ -81,4 +81,7 @@ public class MonitoredLongRunningCallable extends JFrame {
         add(b2);
         add(b3);
     }
+    public static void main(String[] args) {
+        run(new MonitoredLongRunningCallable(), 200, 500);
+    }
 }

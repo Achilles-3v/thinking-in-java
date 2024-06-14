@@ -50,4 +50,7 @@ public class InterruptableLongRunningCallable extends JFrame {
         add(b2);
         add(b3);
     }
+    public static void main(String[] args) {
+        run(new InterruptableLongRunningCallable(), 200, 150);
+    }
 }

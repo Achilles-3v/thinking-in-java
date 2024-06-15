@@ -42,4 +42,13 @@ public class ColorBoxes extends JFrame {
             exec.execute(cb);
         }
     }
+    public static void main(String[] args) {
+        ColorBoxes boxes = new ColorBoxes();
+        if(args.length > 0)
+            boxes.grid = new Integer(args[0]);
+        if(args.length > 1)
+            boxes.pause = new Integer(args[1]);
+        boxes.setUp();
+        run(boxes, 500, 400);
+    }
 }

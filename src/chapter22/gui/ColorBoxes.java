@@ -34,4 +34,12 @@ public class ColorBoxes extends JFrame {
     private int pause = 50;
     private static ExecutorService exec =
             Executors.newCachedThreadPool();
+    public void setUp() {
+        setLayout(new GridLayout(grid, grid));
+        for(int i = 0; i < grid * grid; i++) {
+            CBox cb = new CBox(pause);
+            add(cb);
+            exec.execute(cb);
+        }
+    }
 }

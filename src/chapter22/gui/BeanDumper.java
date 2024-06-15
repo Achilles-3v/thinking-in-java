@@ -53,4 +53,17 @@ public class BeanDumper extends JFrame {
             print("====================");
         }
     }
+    class Dumper implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String name = query.getText();
+            Class<?> c = null;
+            try {
+                c = Class.forName(name);
+            } catch(ClassNotFoundException ex) {
+                results.setText("Couldn't find " + name);
+                return;
+            }
+            dump(c);
+        }
+    }
 }

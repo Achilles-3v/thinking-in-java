@@ -78,4 +78,7 @@ public class BeanDumper extends JFrame {
         query.setText("frogbean.Frog");
         dmpr.actionPerformed(new ActionEvent(dmpr, 0, ""));
     }
+    public static void main(String[] args) {
+        run(new BeanDumper(), 600, 500);
+    }
 }

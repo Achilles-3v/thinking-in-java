@@ -66,4 +66,16 @@ public class BeanDumper extends JFrame {
             dump(c);
         }
     }
+    public BeanDumper() {
+        JPanel p = new JPanel();
+        p.setLayout(new FlowLayout());
+        p.add(new JLabel("Qualified bean name:"));
+        p.add(query);
+        add(BorderLayout.NORTH, p);
+        add(new JScrollPane(results));
+        Dumper dmpr = new Dumper();
+        query.addActionListener(dmpr);
+        query.setText("frogbean.Frog");
+        dmpr.actionPerformed(new ActionEvent(dmpr, 0, ""));
+    }
 }

@@ -13,7 +13,10 @@ public class BangBean extends JPanel implements Serializable {
     private int fontSize = 48;
     private Color tColor = Color.RED;
     private ActionListener actionListener;
-
+    public BangBean() {
+        addMouseListener(new ML());
+        addMouseMotionListener(new MML());
+    }
     public int getCircleSize() { return cSize; }
     public void setCircleSize(int newSize) {
         cSize = newSize;

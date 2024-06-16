@@ -60,4 +60,14 @@ public class BangBean extends JPanel implements Serializable {
                                 ActionEvent.ACTION_PERFORMED, null));
         }
     }
+    class MML extends MouseMotionAdapter {
+        public void mouseMoved(MouseEvent e) {
+            xm = e.getX();
+            ym = e.getY();
+            repaint();
+        }
+    }
+    public Dimension getPreferredSize() {
+        return new Dimension(200, 200);
+    }
 }

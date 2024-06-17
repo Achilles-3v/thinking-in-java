@@ -15,6 +15,10 @@ public class BangBean2 extends JPanel implements Serializable {
     private Color tColor = Color.RED;
     private ArrayList<ActionListener> actionListeners =
             new ArrayList<ActionListener>();
+    public BangBean2() {
+        addMouseListener(new ML());
+        addMouseMotionListener(new MM());
+    }
     public synchronized int getCircleSize() { return cSize; }
     public synchronized void setCircleSize(int newSize) {
         cSize = newSize;

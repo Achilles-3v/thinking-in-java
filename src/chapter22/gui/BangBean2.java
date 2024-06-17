@@ -44,4 +44,14 @@ public class BangBean2 extends JPanel implements Serializable {
     removeActionListener(ActionListener l) {
         actionListeners.remove(l);
     }
+    public void notifyListeners() {
+        ActionEvent a = new ActionEvent(BangBean2.this,
+                ActionEvent.ACTION_PERFORMED, null);
+        ArrayList<ActionListener> lv = null;
+        synchronized(this) {
+            lv = new ArrayList<ActionListener>(actionListeners);
+        }
+        for(ActionListener al : lv)
+            al.actionPerformed(a);
+    }
 }

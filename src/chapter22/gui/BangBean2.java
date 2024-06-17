@@ -67,4 +67,11 @@ public class BangBean2 extends JPanel implements Serializable {
             notifyListeners();
         }
     }
+    class MM extends MouseMotionAdapter {
+        public void mouseMoved(MouseEvent e) {
+            xm = e.getX();
+            ym = e.getY();
+            repaint();
+        }
+    }
 }

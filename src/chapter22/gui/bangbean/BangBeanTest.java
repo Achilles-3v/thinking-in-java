@@ -24,4 +24,7 @@ public class BangBeanTest extends JFrame {
         add(bb);
         add(BorderLayout.SOUTH, txt);
     }
+    public static void main(String[] args) {
+        run(new BangBeanTest(), 400, 500);
+    }
 }

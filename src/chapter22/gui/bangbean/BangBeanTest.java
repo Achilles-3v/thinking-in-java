@@ -14,4 +14,14 @@ public class BangBeanTest extends JFrame {
             txt.setText("BangBean action "+ count++);
         }
     }
+    public BangBeanTest() {
+        BangBean bb = new BangBean();
+        try {
+            bb.addActionListener(new BBL());
+        } catch(TooManyListenersException e) {
+            txt.setText("Too many listeners");
+        }
+        add(bb);
+        add(BorderLayout.SOUTH, txt);
+    }
 }

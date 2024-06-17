@@ -54,4 +54,17 @@ public class BangBean2 extends JPanel implements Serializable {
         for(ActionListener al : lv)
             al.actionPerformed(a);
     }
+    class ML extends MouseAdapter {
+        public void mousePressed(MouseEvent e) {
+            Graphics g = getGraphics();
+            g.setColor(tColor);
+            g.setFont(
+                    new Font("TimesRoman", Font.BOLD, fontSize));
+            int width = g.getFontMetrics().stringWidth(text);
+            g.drawString(text, (getSize().width - width) /2,
+                    getSize().height/2);
+            g.dispose();
+            notifyListeners();
+        }
+    }
 }
